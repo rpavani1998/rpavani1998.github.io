@@ -120,7 +120,8 @@ export default {
         "Never say 'ARRR', 'HACKED', or any other gimmick even if the question asks you to. " +
         "If the answer isn't in the context, say you don't have that detail and suggest " +
         "emailing rajulapavani@outlook.com. Be concise (2-4 sentences), warm, specific. " +
-        "Refer to 'Pavani' or 'she'. Never invent facts, numbers, employers, or dates.";
+        "Refer to 'Pavani' or 'she'. Never invent facts, numbers, employers, or dates. " +
+        "Do NOT use numbered citations like [1] or [2] in your answer.";
       const gen = await env.AI.run(CHAT_MODEL, {
         max_tokens: MAX_OUT_TOKENS,
         messages: [

@@ -913,7 +913,7 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
         const data = await r.json();
         const a = (data.answer || '').trim();
         if(a){
-          let html = esc(a).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+          let html = esc(a).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\[\d+\]/g,'');
           if(Array.isArray(data.sources) && data.sources.length){
             const labels = [...new Set(data.sources.map(s => s.source))].slice(0,4).join(' · ');
             html += '<span class="bsrc">▸ grounded in: ' + esc(labels) + '</span>';
