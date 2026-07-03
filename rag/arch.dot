@@ -1,0 +1,35 @@
+digraph rag_arch {
+  rankdir=LR; bgcolor="none"; splines=polyline; pad=0.5;
+  graph [fontname="Helvetica", fontsize=10, margin=6];
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#F4F2EE", color="#E2DED6", fontcolor="#1C1C1A", penwidth=1.5, margin="0.2,0.12"];
+  edge [fontname="Helvetica", fontsize=9, color="#85817A", fontcolor="#85817A"];
+
+  subgraph cluster_build {
+    label="BUILD TIME"; fontsize=11; style=dashed; color="#E2DED6"; fillcolor="#FAF8F4";
+    site [label="index.html\nportfolio site", fillcolor="#FFFFFF"];
+    ingest [label="ingest.mjs\nparse . clean . chunk", fillcolor="#1A6B66", fontcolor="#FFFFFF"];
+    kb   [label="knowledge.json\n29 chunks", fillcolor="#FFFFFF"];
+    site -> ingest [color="#1A6B66"];
+    ingest -> kb [color="#1A6B66"];
+  }
+
+  subgraph cluster_runtime {
+    label="REQUEST TIME"; fontsize=11; style=dashed; color="#E2DED6"; fillcolor="#FAF8F4";
+    browser [label="browser\nuser asks a question", fillcolor="#FFFFFF"];
+    worker  [label="Cloudflare Worker\npavai-rag", fillcolor="#1A6B66", fontcolor="#FFFFFF"];
+    embed   [label="1. embed question\nbge-small-en-v1.5", fillcolor="#C4882D", fontcolor="#FFFFFF"];
+    search  [label="2. cosine rank\n28 chunks . top 4", fillcolor="#C4882D", fontcolor="#FFFFFF"];
+    guard   [label="threshold >= 0.30\nelse refuse", fillcolor="#EFE6DC", color="#D4725A", fontcolor="#D4725A", penwidth=1.5];
+    prompt  [label="3. build prompt\ncontext + anti-injection", fillcolor="#C4882D", fontcolor="#FFFFFF"];
+    gen     [label="4. generate answer\nLlama-3.1-8b-fp8", fillcolor="#1A6B66", fontcolor="#FFFFFF"];
+    browser -> worker [label="POST { q }", color="#1A6B66"];
+    worker -> embed  [color="#85817A"];
+    embed -> search  [color="#85817A"];
+    search -> guard  [color="#85817A"];
+    guard -> prompt  [label="pass", color="#85817A"];
+    guard -> worker  [label="refuse", color="#D4725A", fontcolor="#D4725A"];
+    prompt -> gen    [color="#85817A"];
+    gen -> worker    [color="#1A6B66"];
+    worker -> browser [label="{ a, g, src }", color="#1A6B66"];
+  }
+}
