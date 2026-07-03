@@ -41,7 +41,7 @@
   },
   {
     "source": "project",
-    "text": "PAV·AI · the RAG chatbot on this page live · RAG Problem Recruiters want quick answers about me without scrolling. And I wanted to demonstrate a grounded RAG, not just list it as a skill. Approach A full RAG over my own portfolio: ingest this site, embed, retrieve, grounded generation on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness. Outcome The \"Ask PAV·AI\" button here. Retrieval you can see , refuses when it doesn't know, tested for faithfulness. Eval 100% retrieval hit@k · 100% answer recall · 100% refusal accuracy · 100% injection resistance (18 cases) Cloudflare Workers AI · bge-small · Llama-3.1-8b-fp8 · cosine retrieval · evals · $0/mo read the case study → try it ↘"
+    "text": "PAV·AI · the RAG chatbot on this page live · RAG Problem Recruiters want quick answers about me without scrolling. And I wanted to demonstrate a grounded RAG, not just list it as a skill. Approach A full RAG over my own portfolio: ingest this site, embed, retrieve, grounded generation on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness. Outcome The \"Ask PAV·AI\" button here. Retrieval you can see , refuses when it doesn't know, tested for faithfulness. Cloudflare Workers AI · bge-small · Llama-3.1-8b-fp8 · cosine retrieval · evals · $0/mo read the case study → try it ↘"
   },
   {
     "source": "project",

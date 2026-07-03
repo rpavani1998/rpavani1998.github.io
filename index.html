@@ -404,7 +404,7 @@ footer a:hover{color:var(--accent)}
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="status"><i></i> Open to AI engineering roles</p>
-        <h1>Pavani Rajula.<br />From prompt to <em>production.</em></h1>
+        <h1>Pavani Rajula.</h1><h2>From prompt to <em>production.</em></h2>
         <p class="tagline">building <span class="typed" id="typed"></span><span class="caret" aria-hidden="true"></span></p>
         <p class="hero-sub">Anyone can demo an LLM. I build the part that survives contact with reality: <b>agentic systems, RAG pipelines, and MCP frameworks with evals and hallucination mitigation built in</b>, embedded with client teams from architecture to deployment. MSc Data Science, University of Mannheim.</p>
         <div class="cta-row">
@@ -420,13 +420,13 @@ footer a:hover{color:var(--accent)}
         <span class="photo-badge"><i></i> Hyderabad, IN · remote-friendly</span>
       </div>
     </div>
-
+<!-- 
     <div class="proof">
       <div class="pf rv"><div class="n" data-count="6" data-suffix="+">0</div><div class="l">Years in data &amp; AI</div></div>
       <div class="pf rv"><div class="n" data-count="20" data-suffix=" TB">0</div><div class="l">Data engineered</div></div>
       <div class="pf rv"><div class="n" data-count="1" data-suffix="st">0</div><div class="l">JIVS AI hackathon</div></div>
       <div class="pf rv"><div class="n" data-count="4" data-suffix="+">0</div><div class="l">Conference talks</div></div>
-    </div>
+    </div> -->
   </div>
 </header>
 
@@ -545,7 +545,6 @@ footer a:hover{color:var(--accent)}
         <div class="r"><span class="k">Problem</span><span>Recruiters want quick answers about me without scrolling. And I wanted to <b>demonstrate</b> a grounded RAG, not just list it as a skill.</span></div>
         <div class="r"><span class="k">Approach</span><span>A full RAG over my own portfolio: <b>ingest this site, embed, retrieve, grounded generation</b> on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness.</span></div>
         <div class="r"><span class="k">Outcome</span><span>The "Ask PAV·AI" button here. <b>Retrieval you can see</b>, refuses when it doesn't know, tested for faithfulness.</span></div>
-        <div class="r"><span class="k">Eval</span><span><b>100%</b> retrieval hit@k · <b>100%</b> answer recall · <b>100%</b> refusal accuracy · <b>100%</b> injection resistance <span style="font-family:var(--mono);font-size:11px;color:var(--gold)">(18 cases)</span></span></div>
       </div>
       <p class="pstack">Cloudflare Workers AI · bge-small · Llama-3.1-8b-fp8 · cosine retrieval · evals · $0/mo</p>
       <div class="plinks"><a href="rag.html">read the case study →</a><a href="#home" onclick="setTimeout(function(){document.getElementById('botFab').click()},400)">try it ↘</a></div>
@@ -875,6 +874,7 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
     {k:['hire','why','fit','consultant','strength','good','great','stand'], a:"What makes Pavani stand out:\n1. <b>Embedded delivery.</b> She works inside a client's environment today, turning their requirements into production systems.\n2. <b>Full AI delivery stack.</b> RAG services, evals, hallucination mitigation, APIs, deployment.\n3. <b>Client-facing chops.</b> Conference talks, demos, hackathon wins.\n4. Domain depth in <b>GDPR and compliance</b>, regulated environments where reliability matters most."},
     {k:['project','case','work','built','portfolio'], a:"Top projects:\n◉ <b>AI Compliance Platform.</b> RAG over legal PDFs for self-serve incorporation checks.\n◉ <b>PIP-Net Fusion</b> (MSc thesis). Interpretable ensembling and federation, extended at PyTorch Conf EU 2026.\n◉ <b>SensePOLAR toolkit.</b> Embedding interpretability across models and languages.\n◉ <b>Water Damage Detection.</b> U-Net segmentation.\n\nFull case studies are in the Work section."},
     {k:['skill','stack','tech','tool','know'], a:"Her stack:\n◉ <b>LLM/Agents</b>: Agentic AI, RAG, MCP, LangChain, LlamaIndex\n◉ <b>Evals</b>: metrics, hallucination mitigation, monitoring\n◉ <b>ML/DL</b>: PyTorch, TensorFlow, XAI\n◉ <b>Infra</b>: FastAPI, Docker, AWS, Qdrant, Spark"},
+    {k:['cloud','aws','azure','lambda','s3','docker'], a:"Yes! Pavani has cloud experience with <b>AWS</b> (Lambda, S3, IAM) and <b>Azure</b> (Distributed Task Execution). She led an AWS migration PoC at State Street that cut infra costs by 30%, and built this very RAG chatbot on Cloudflare Workers. She's also a 3x Linux Foundation scholar for cloud-native contributions (KubeCon, OSS Summit)."},
     {k:['experience','job','career','history','state','ceph','migration','neucorelytix'], a:"Timeline:\n2025→ currently <b>NeuCorelytix</b> doing agentic AI architecture and MCP frameworks (client-embedded).\n2023–25 <b>Data Migration Intl</b> (Switzerland) shipping production LLM/RAG and GDPR PII detection.\n2019–22 <b>State Street</b> engineering regulatory data over 20 TB of Hadoop.\n2018 <b>Ceph</b> as an Outreachy open-source intern."},
     {k:['contact','email','reach','linkedin','github','touch'], a:"✉ <b>rajulapavani@outlook.com</b>\n💼 linkedin.com/in/rajula-pavani\n⌥ github.com/rpavani1998\n✍ pavanirajula.substack.com\n\nShe's open to AI engineering opportunities. Say hello!"},
     {k:['education','degree','study','mannheim','thesis'], a:"🎓 <b>MSc Data Science</b> from University of Mannheim (2022–24), thesis on interpretable model federation (PIP-Net Fusion).\n🎓 <b>B.Tech IT</b> from BVRIT Hyderabad (2015–19)."},

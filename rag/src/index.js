@@ -17,12 +17,6 @@ import CHUNKS from "../knowledge.json";
 const EMBED_MODEL = "@cf/baai/bge-small-en-v1.5";
 const CHAT_MODEL  = "@cf/meta/llama-3.1-8b-instruct-fp8";
 
-const ALLOWED_ORIGINS = [
-  "https://rpavani1998.github.io",
-  "http://localhost:8000",
-  "http://127.0.0.1:8000",
-];
-
 const MAX_Q_CHARS    = 300;   // input cap — bounds cost + abuse
 const MAX_OUT_TOKENS = 300;   // output cap
 const TOP_K          = 4;     // chunks retrieved per query
@@ -36,9 +30,8 @@ const RATE_WINDOW_S  = 3600;
 let INDEX = null;
 
 function cors(origin) {
-  const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
   return {
-    "Access-Control-Allow-Origin": allow,
+    "Access-Control-Allow-Origin": origin || "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Max-Age": "86400",
