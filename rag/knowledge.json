@@ -45,7 +45,7 @@
   },
   {
     "source": "project",
-    "text": "AI Business Incorporation & Compliance Platform agentic · RAG Problem Founders drown in dense legal PDFs when checking incorporation eligibility and compliance requirements. Approach Headless multi-channel platform in a Turborepo monorepo: type-safe NestJS APIs plus a standalone Python RAG service with local embeddings and vector search over legal corpora. Outcome Self-serve compliance checks. Founders query complex regulation in plain language. FastAPI · Qdrant · Next.js · NestJS · Prisma · Turborepo 🔒 proprietary client work · happy to walk through the architecture in an interview"
+    "text": "AI-Assisted Business Compliance Platform agentic · RAG · full-stack Overview An end-to-end platform that helps founders navigate regional government compliance and business incorporation. An AI Concierge replaces complex legal bureaucracy with guided conversation, grounded in curated legal documents. RAG Pipeline Dedicated Python/FastAPI microservice (decoupled from Node.js backend) with Qdrant vector search, LangChain orchestration, and local/cloud LLMs — context-aware generation that eliminated hallucinations by grounding responses in retrieved legal documents. Stack Next.js (frontend + admin dashboard) · NestJS API · Prisma + PostgreSQL · Payload CMS (knowledge base management) · Turborepo monorepo · Docker Compose orchestration Key Feature CMS-driven knowledge base: non-technical admins edit service guides, upload compliance PDFs, and trigger auto re-indexing of the vector database — no developer needed. FastAPI · Qdrant · LangChain · Next.js · NestJS · Prisma · PostgreSQL · Payload CMS · Turborepo · Docker"
   },
   {
     "source": "project",
@@ -61,7 +61,7 @@
   },
   {
     "source": "experience",
-    "text": "New Quality Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jun 2026, now building AI solutions for clients Building an agentic EMS system with LLM-powered workflows and automated content generation. Architecting agentic AI systems : LLMs, RAG, tool orchestration, autonomous workflows, MCP frameworks. Designing scalable AI services including microservices, async pipelines, distributed execution, and optimized inference. Implementing vector databases for retrieval-augmented workflows and semantic search. Building MCP frameworks for evaluation metrics, hallucination mitigation, monitoring, and feedback loops."
+    "text": "New Quality Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Built AI-Assisted Business Compliance Platform : RAG pipeline with Qdrant vector search, LangChain orchestration, local/cloud LLMs — context-aware generation grounded in legal documents. Architected dedicated Python/FastAPI AI microservice decoupled from NestJS/Node.js backend; CMS-driven knowledge base with auto re-indexing via Payload CMS. Engineered full-stack monorepo ( Next.js, NestJS, Prisma, PostgreSQL ) with Docker Compose orchestration across 5 interconnected services. Drove AI integration at Data Migration International : production LLM/RAG solutions, GDPR PII identification, data-quality systems (under NeuCorelytix Solutions)."
   },
   {
     "source": "experience",
