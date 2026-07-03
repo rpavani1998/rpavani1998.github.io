@@ -5,7 +5,7 @@
   },
   {
     "source": "about",
-    "text": "01 · about Research-grade AI, production-grade engineering. I turn frontier AI research into systems that survive production: agents that reason, pipelines that retrieve, and models people can trust . I work through my own company . Right now I'm building AI solutions for clients at New Quality Solutions — most recently as an external consultant to Data Migration International . Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source. I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
+    "text": "01 · about Research-grade AI, production-grade engineering. I turn frontier AI research into systems that survive production: agents that reason, pipelines that retrieve, and models people can trust . I work through my own company . Right now I'm building AI solutions for clients at NeuCorelytix Solutions — most recently as an external consultant to Data Migration International . Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source. I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
   },
   {
     "source": "skills",
@@ -65,7 +65,11 @@
   },
   {
     "source": "experience",
-    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Jun 2026 Kreuzlingen, Switzerland · direct hire Oct 2023–Sep 2025, external consultant via New Quality Solutions Sep 2025–Jun 2026 Built production LLM solutions : RAG pipelines, conversational agents, GDPR-compliant text-to-SQL, and NLP systems with end-to-end ML pipelines. Led AI integration across the organization: GDPR-compliant PII identification , data-quality systems, and compliance automation. Designed data systems and MCP frameworks for scalable retrieval, monitoring, and feedback loops."
+    "text": "Data Migration International Data Science & AI Developer · external consultant via NeuCorelytix Solutions freelance Sep 2025 · Jul 2026 Hyderabad, India · on-site Develop agentic AI systems with LLMs, RAG, tool orchestration , and autonomous workflow automation. Design scalable AI service architectures: microservice model endpoints, async pipelines, distributed task execution . Build evaluation frameworks for agent behavior, response reliability, data integrity, and failure recovery. Implement monitoring and feedback loops to reduce hallucinations and improve domain grounding. Integrate AI into production environments ensuring compliance, security, cost efficiency, and maintainability ."
+  },
+  {
+    "source": "experience",
+    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Sep 2025 Kreuzlingen, Switzerland · hybrid Developed and deployed AI solutions with LLMs, RAG, NLP , and structured data pipelines. Fine-tuned and optimized models for production use cases, improving performance and scalability. Built end-to-end ML pipelines and integrated AI capabilities into business workflows. Contributed to model deployment and integration in real-world environments."
   },
   {
     "source": "experience",
