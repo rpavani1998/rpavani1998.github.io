@@ -438,7 +438,7 @@ footer a:hover{color:var(--accent)}
     <div class="about-grid">
       <div class="about-copy">
         <p>I turn frontier AI research into systems that survive production: <b>agents that reason, pipelines that retrieve, and models people can trust</b>.</p>
-        <p>I work <b>embedded with clients</b>. Right now I'm architecting agentic AI systems and building an agentic website CMS platform at <b>NeuCorelytix Solutions</b> — most recently as an external consultant to <b>Data Migration International</b>.</p>
+        <p>I work through <b>my own company</b>. Right now I'm building AI solutions for clients at <b>NeuCorelytix Solutions</b> — most recently as an external consultant to <b>Data Migration International</b>.</p>
         <p>Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at <b>Data Migration International</b> in Switzerland, and three years engineering regulatory data pipelines over 20&nbsp;TB of Hadoop data at <b>State Street</b>.</p>
         <p>My roots are in open source. I started as an <b>Outreachy intern at Ceph</b> building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art.</p>
       </div>
@@ -604,19 +604,19 @@ footer a:hover{color:var(--accent)}
     <p class="sec-sub">Work, study, and open source on one timeline. Teal dots are roles, gold dots are degrees.</p>
     <div class="xp">
       <div class="xp-item now rv">
-        <div class="xp-top"><h3>NeuCorelytix Solutions LLP</h3><span class="xp-role">Data Science &amp; AI Developer</span><span class="xp-type">work</span><span class="xp-date">Sep 2025 · present</span></div>
-        <p class="xp-loc">Remote · external consultant to Data Migration International (until Jun 2026), now building agentic AI systems and a website CMS platform for clients</p>
+        <div class="xp-top"><h3>NeuCorelytix Solutions</h3><span class="xp-role">Founder · AI Developer</span><span class="xp-type">work</span><span class="xp-date">Sep 2025 · present</span></div>
+        <p class="xp-loc">Remote · my own company. External consultant to Data Migration International until Jun 2026, now building AI solutions for clients</p>
         <ul>
+          <li>Building an <b>agentic EMS system</b> with LLM-powered workflows and automated content generation.</li>
           <li>Architecting <b>agentic AI systems</b>: LLMs, RAG, tool orchestration, autonomous workflows, MCP frameworks.</li>
-          <li>Building an <b>agentic website CMS system</b> with LLM-powered content generation and automated workflows.</li>
-          <li>Designed scalable AI services including microservices, async pipelines, distributed execution, and optimized inference.</li>
-          <li>Implemented <b>vector databases</b> for retrieval-augmented workflows and semantic search.</li>
-          <li>Built <b>MCP frameworks</b> for evaluation metrics, hallucination mitigation, monitoring, and feedback loops.</li>
+          <li>Designing scalable AI services including microservices, async pipelines, distributed execution, and optimized inference.</li>
+          <li>Implementing <b>vector databases</b> for retrieval-augmented workflows and semantic search.</li>
+          <li>Building <b>MCP frameworks</b> for evaluation metrics, hallucination mitigation, monitoring, and feedback loops.</li>
         </ul>
       </div>
       <div class="xp-item rv">
         <div class="xp-top"><h3>Data Migration International</h3><span class="xp-role">Data Science &amp; AI Developer</span><span class="xp-type">work</span><span class="xp-date">Oct 2023 · Jun 2026</span></div>
-        <p class="xp-loc">Kreuzlingen, Switzerland · direct hire Oct 2023–Sep 2025, external consultant via NeuCorelytix Sep 2025–Jun 2026</p>
+        <p class="xp-loc">Kreuzlingen, Switzerland · direct hire Oct 2023–Sep 2025, external consultant via NeuCorelytix Solutions Sep 2025–Jun 2026</p>
         <ul>
           <li>Built <b>production LLM solutions</b>: RAG pipelines, conversational agents, GDPR-compliant text-to-SQL, and NLP systems with end-to-end ML pipelines.</li>
           <li>Led AI integration across the organization: <b>GDPR-compliant PII identification</b>, data-quality systems, and compliance automation.</li>
@@ -872,12 +872,12 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
   // scripted fallback to a real RAG (see rag/README.md). Empty = scripted.
   const RAG_ENDPOINT = "https://pavai-rag.rpavani1998.workers.dev";
   const KB = [
-    {k:['do','who','about','role','summary','pavani','she'], a:"Pavani is an <b>AI Developer & Data Scientist</b>. She architects agentic AI systems and builds LLM applications for clients through <b>NeuCorelytix Solutions</b> — most recently as external consultant to Data Migration International. MSc Data Science, University of Mannheim."},
+    {k:['do','who','about','role','summary','pavani','she','quality'], a:"Pavani is an <b>AI Developer</b> running her own company <b>NeuCorelytix Solutions</b>, building AI solutions for clients. She was most recently an external consultant to Data Migration International. MSc Data Science, University of Mannheim."},
     {k:['hire','why','fit','consultant','strength','good','great','stand'], a:"What makes Pavani stand out:\n1. <b>Embedded delivery.</b> She works inside a client's environment today, turning their requirements into production systems.\n2. <b>Full AI delivery stack.</b> RAG services, evals, hallucination mitigation, APIs, deployment.\n3. <b>Client-facing chops.</b> Conference talks, demos, hackathon wins.\n4. Domain depth in <b>GDPR and compliance</b>, regulated environments where reliability matters most."},
     {k:['project','case','work','built','portfolio'], a:"Top projects:\n◉ <b>AI Compliance Platform.</b> RAG over legal PDFs for self-serve incorporation checks.\n◉ <b>PIP-Net Fusion</b> (MSc thesis). Interpretable ensembling and federation, extended at PyTorch Conf EU 2026.\n◉ <b>SensePOLAR toolkit.</b> Embedding interpretability across models and languages.\n◉ <b>Water Damage Detection.</b> U-Net segmentation.\n\nFull case studies are in the Work section."},
     {k:['skill','stack','tech','tool','know'], a:"Her stack:\n◉ <b>LLM/Agents</b>: Agentic AI, RAG, MCP, LangChain, LlamaIndex\n◉ <b>Evals</b>: metrics, hallucination mitigation, monitoring\n◉ <b>ML/DL</b>: PyTorch, TensorFlow, XAI\n◉ <b>Infra</b>: FastAPI, Docker, AWS, Qdrant, Spark"},
     {k:['cloud','aws','azure','lambda','s3','docker'], a:"Yes! Pavani has cloud experience with <b>AWS</b> (Lambda, S3, IAM) and <b>Azure</b> (Distributed Task Execution). She led an AWS migration PoC at State Street that cut infra costs by 30%, and built this very RAG chatbot on Cloudflare Workers. She's also a 3x Linux Foundation scholar for cloud-native contributions (KubeCon, OSS Summit)."},
-    {k:['experience','job','career','history','state','ceph','migration','neucorelytix'], a:"Timeline:\n2025→ currently <b>NeuCorelytix</b> — external consultant to Data Migration International until Jun 2026, now building LLM applications for clients.\n2023–25 <b>Data Migration Intl</b> (Switzerland) shipping production LLM/RAG and GDPR PII detection.\n2019–22 <b>State Street</b> engineering regulatory data over 20 TB of Hadoop.\n2018 <b>Ceph</b> as an Outreachy open-source intern."},
+    {k:['experience','job','career','history','state','ceph','migration','neucorelytix','quality'], a:"Timeline:\n2025→ currently running <b>NeuCorelytix Solutions</b> — external consultant to Data Migration International until Jun 2026, now building AI solutions for clients.\n2023–25 <b>Data Migration Intl</b> (Switzerland) shipping production LLM/RAG and GDPR PII detection.\n2019–22 <b>State Street</b> engineering regulatory data over 20 TB of Hadoop.\n2018 <b>Ceph</b> as an Outreachy open-source intern."},
     {k:['contact','email','reach','linkedin','github','touch'], a:"✉ <b>rajulapavani@outlook.com</b>\n💼 linkedin.com/in/rajula-pavani\n⌥ github.com/rpavani1998\n✍ pavanirajula.substack.com\n\nShe's open to AI engineering opportunities. Say hello!"},
     {k:['education','degree','study','mannheim','thesis'], a:"🎓 <b>MSc Data Science</b> from University of Mannheim (2022–24), thesis on interpretable model federation (PIP-Net Fusion).\n🎓 <b>B.Tech IT</b> from BVRIT Hyderabad (2015–19)."},
     {k:['achieve','award','win','hackathon','publication','talk'], a:"🏆 Winner, JIVS AI Hackathon (Geo-Masking privacy system)\n📄 Published at CLEF 2022 (ceur-ws.org/Vol-3180/paper-258.pdf)\n🔬 Poster @ PyTorch Conference Europe 2026\n🐧 3× Linux Foundation scholarships\n🎤 Talks at DevConf.in & PyConf Hyderabad"},

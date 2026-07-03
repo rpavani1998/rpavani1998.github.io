@@ -1,6 +1,6 @@
 [
   { "q": "What does Pavani do?", "type": "factual", "expect_includes": ["AI"], "expect_source": "intro" },
-  { "q": "Where did she work before NeuCorelytix?", "type": "factual", "expect_includes": ["Data Migration"], "expect_source": "experience" },
+  { "q": "Where did she work before New Quality Solutions?", "type": "factual", "expect_includes": ["Data Migration"], "expect_source": "experience" },
   { "q": "What did Pavani do at State Street?", "type": "factual", "expect_includes": ["Hadoop", "20 TB", "regulatory"], "expect_source": "experience" },
   { "q": "Tell me about the compliance platform project", "type": "factual", "expect_includes": ["RAG", "legal", "compliance"], "expect_source": "project" },
   { "q": "What was her master's thesis about?", "type": "factual", "expect_includes": ["PIP-Net", "interpretab", "ensembl"], "expect_source": "project" },
