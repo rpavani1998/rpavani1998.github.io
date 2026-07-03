@@ -5,7 +5,7 @@
   },
   {
     "source": "about",
-    "text": "01 · about Research-grade AI, production-grade engineering. I turn frontier AI research into systems that survive production: agents that reason, pipelines that retrieve, and models people can trust . I work embedded with clients . Right now I'm architecting agentic AI systems and building LLM applications at NeuCorelytix Solutions , turning client requirements directly into production systems. Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source. I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
+    "text": "01 · about Research-grade AI, production-grade engineering. I turn frontier AI research into systems that survive production: agents that reason, pipelines that retrieve, and models people can trust . I work embedded with clients . Right now I'm architecting agentic AI systems and building LLM applications at NeuCorelytix Solutions — most recently as an external consultant to Data Migration International , and now building LLM applications for clients. Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source. I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
   },
   {
     "source": "skills",
@@ -61,11 +61,11 @@
   },
   {
     "source": "experience",
-    "text": "NeuCorelytix Solutions LLP Data Science & AI Developer work Sep 2025 · present Remote · building LLM applications for clients Architecting agentic AI systems : LLMs, RAG, tool orchestration, autonomous workflows. Building LLM applications for clients: retrieval-augmented generation, conversational agents, and production ML pipelines. Designed scalable AI services including microservices, async pipelines, distributed execution, and optimized inference. Implemented vector databases for retrieval-augmented workflows and semantic search. Built MCP frameworks for evaluation metrics, hallucination mitigation, monitoring, and feedback loops."
+    "text": "NeuCorelytix Solutions LLP Data Science & AI Developer work Sep 2025 · present Remote · external consultant to Data Migration International (until Jun 2026), now building LLM applications for clients Architecting agentic AI systems : LLMs, RAG, tool orchestration, autonomous workflows. Building LLM applications for clients: retrieval-augmented generation, conversational agents, and production ML pipelines. Designed scalable AI services including microservices, async pipelines, distributed execution, and optimized inference. Implemented vector databases for retrieval-augmented workflows and semantic search. Built MCP frameworks for evaluation metrics, hallucination mitigation, monitoring, and feedback loops."
   },
   {
     "source": "experience",
-    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Sep 2025 Kreuzlingen, Switzerland Shipped production LLM, RAG, and NLP solutions with end-to-end ML pipelines. Led AI integration: conversational agents, GDPR-compliant PII identification , data-quality systems."
+    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Jun 2026 Kreuzlingen, Switzerland · direct hire Oct 2023–Sep 2025, external consultant via NeuCorelytix Sep 2025–Jun 2026 Shipped production LLM, RAG, and NLP solutions with end-to-end ML pipelines. Led AI integration: conversational agents, GDPR-compliant PII identification , data-quality systems."
   },
   {
     "source": "experience",
