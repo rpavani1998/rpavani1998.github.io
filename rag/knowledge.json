@@ -41,6 +41,10 @@
   },
   {
     "source": "project",
+    "text": "PAV·AI — the RAG chatbot on this page live · RAG Problem Recruiters want quick answers about me without scrolling — and I wanted to demonstrate a grounded RAG, not just list it as a skill. Approach A full RAG over my own portfolio: ingest this site → embed → retrieve → grounded generation on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness. Outcome The \"Ask PAV·AI\" button here — retrieval you can see , refuses when it doesn't know, and tested for faithfulness. Eval 100% retrieval hit@k · 100% answer recall · 100% refusal accuracy · 100% injection resistance (18 cases) Cloudflare Workers AI · bge-small · Llama-3.1-8b-fp8 · cosine retrieval · evals · $0/mo read the case study → try it ↘"
+  },
+  {
+    "source": "project",
     "text": "AI Business Incorporation & Compliance Platform agentic · RAG Problem Founders drown in dense legal PDFs when checking incorporation eligibility and compliance requirements. Approach Headless multi-channel platform in a Turborepo monorepo — type-safe NestJS APIs plus a standalone Python RAG service with local embeddings and vector search over legal corpora. Outcome Self-serve compliance checks — founders query complex regulation in plain language. FastAPI · Qdrant · Next.js · NestJS · Prisma · Turborepo 🔒 proprietary client work — happy to walk through the architecture in an interview"
   },
   {

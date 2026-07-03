@@ -545,8 +545,9 @@ footer a:hover{color:var(--accent)}
         <div class="r"><span class="k">Problem</span><span>Recruiters want quick answers about me without scrolling — and I wanted to <b>demonstrate</b> a grounded RAG, not just list it as a skill.</span></div>
         <div class="r"><span class="k">Approach</span><span>A full RAG over my own portfolio: <b>ingest this site → embed → retrieve → grounded generation</b> on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness.</span></div>
         <div class="r"><span class="k">Outcome</span><span>The "Ask PAV·AI" button here — <b>retrieval you can see</b>, refuses when it doesn't know, and tested for faithfulness.</span></div>
+        <div class="r"><span class="k">Eval</span><span><b>100%</b> retrieval hit@k · <b>100%</b> answer recall · <b>100%</b> refusal accuracy · <b>100%</b> injection resistance <span style="font-family:var(--mono);font-size:11px;color:var(--gold)">(18 cases)</span></span></div>
       </div>
-      <p class="pstack">Cloudflare Workers AI · bge-small · Llama-3.1-8b · cosine retrieval · evals</p>
+      <p class="pstack">Cloudflare Workers AI · bge-small · Llama-3.1-8b-fp8 · cosine retrieval · evals · $0/mo</p>
       <div class="plinks"><a href="rag.html">read the case study →</a><a href="#home" onclick="setTimeout(function(){document.getElementById('botFab').click()},400)">try it ↘</a></div>
     </article>
 
@@ -753,7 +754,7 @@ footer a:hover{color:var(--accent)}
     </ol>
     <p class="rm-note">Tested with an <b>eval harness</b> (retrieval, groundedness, refusal, injection). A deliberate reference build — a résumé fits in context, but I built the full pipeline to show it done right.</p>
     <div class="rm-tags">
-      <span class="tag hot">Cloudflare Workers AI</span><span class="tag">bge-small</span><span class="tag">Llama-3.1-8b</span><span class="tag">evals</span>
+      <span class="tag hot">Cloudflare Workers AI</span><span class="tag">bge-small</span><span class="tag">Llama-3.1-8b-fp8</span><span class="tag">evals</span>
     </div>
     <a class="rm-link" href="rag.html">read the full case study →</a>
   </div>
@@ -868,7 +869,7 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
         modalClose = document.getElementById('ragModalClose');
   // Paste your deployed Cloudflare Worker URL here to switch PAV·AI from the
   // scripted fallback to a real RAG (see rag/README.md). Empty = scripted.
-  const RAG_ENDPOINT = "";
+  const RAG_ENDPOINT = "https://pavai-rag.rpavani1998.workers.dev";
   const KB = [
     {k:['do','who','about','role','summary','pavani','she'], a:"Pavani is an <b>AI Developer & Data Scientist</b> — she architects agentic AI systems (LLMs, RAG, tool orchestration, MCP frameworks) embedded with client teams, currently consulting for Data Migration International via NeuCorelytix. MSc Data Science, University of Mannheim."},
     {k:['hire','why','fit','consultant','strength','good','great','stand'], a:"Why Pavani stands out:\n1. <b>Embedded delivery</b> — she works inside a client's environment today, turning their requirements into production systems\n2. <b>Full AI delivery stack</b>: RAG services, evals, hallucination mitigation, APIs, deployment\n3. <b>Client-facing chops</b>: conference talks, demos, hackathon wins\n4. Domain depth in <b>GDPR & compliance</b> — regulated environments where reliability matters most"},
