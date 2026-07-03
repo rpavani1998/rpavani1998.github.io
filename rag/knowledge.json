@@ -61,7 +61,7 @@
   },
   {
     "source": "experience",
-    "text": "NeuCorelytix Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Built AI-Assisted Business Compliance Platform : RAG pipeline with Qdrant vector search, LangChain orchestration, local/cloud LLMs — context-aware generation grounded in legal documents. Architected dedicated Python/FastAPI AI microservice decoupled from NestJS/Node.js backend; CMS-driven knowledge base with auto re-indexing via Payload CMS. Engineered full-stack monorepo ( Next.js, NestJS, Prisma, PostgreSQL ) with Docker Compose orchestration across 5 interconnected services. Drove AI integration at Data Migration International : production LLM/RAG solutions, GDPR PII identification, data-quality systems (under NeuCorelytix Solutions)."
+    "text": "NeuCorelytix Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Building AI-Assisted Business Compliance Platform : RAG pipeline with Qdrant vector search, LangChain orchestration, local/cloud LLMs — context-aware generation grounded in legal documents. Architecting dedicated Python/FastAPI AI microservice decoupled from NestJS/Node.js backend; CMS-driven knowledge base with auto re-indexing via Payload CMS. Engineering full-stack monorepo ( Next.js, NestJS, Prisma, PostgreSQL ) with Docker Compose orchestration across 5 interconnected services. Driving AI integration at Data Migration International : production LLM/RAG solutions, GDPR PII identification, data-quality systems (under NeuCorelytix Solutions)."
   },
   {
     "source": "experience",
