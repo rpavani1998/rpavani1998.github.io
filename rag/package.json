@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "ingest": "node scripts/ingest.mjs",
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "eval": "node evals/run.mjs"
   },
   "devDependencies": {
     "wrangler": "^3.90.0"

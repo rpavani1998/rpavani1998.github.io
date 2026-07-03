@@ -1,0 +1,8 @@
+{
+  "ran_at": "2026-07-03T09:23:44.054Z",
+  "model": "bge-small-en-v1.5 (transformers.js, local)",
+  "n_questions": 11,
+  "hit_at_1": 55,
+  "hit_at_k": 82,
+  "mrr": 0.708
+}

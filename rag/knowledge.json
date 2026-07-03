@@ -1,0 +1,114 @@
+[
+  {
+    "source": "intro",
+    "text": "Open to AI engineering roles Pavani Rajula. From prompt to production. building Anyone can demo an LLM. I build the part that survives contact with reality: agentic systems, RAG pipelines, and MCP frameworks with evals and hallucination mitigation built in — embedded with client teams from architecture to deployment. MSc Data Science, University of Mannheim. View my work Download resume (PDF) Hyderabad, IN · remote-friendly 0 Years in data & AI 0 Data engineered 0 JIVS AI hackathon 0 Conference talks"
+  },
+  {
+    "source": "about",
+    "text": "01 — about Research-grade AI, production-grade engineering. I turn frontier AI research into systems that survive production — agents that reason, pipelines that retrieve, and models people can trust . I work embedded with the client . Currently I architect agentic AI systems at NeuCorelytix Solutions as external consultant to Data Migration International — LLM orchestration, autonomous workflows, vector search, and MCP frameworks with hallucination mitigation designed in from day one — turning their requirements directly into production systems. Before that: two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source — I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
+  },
+  {
+    "source": "skills",
+    "text": "LLM & Agentic Engineering ai-llm/ Agentic AI RAG MCP Tool Orchestration Prompt Engineering LangChain LlamaIndex Agno OpenAI API HF Transformers Semantic Search"
+  },
+  {
+    "source": "skills",
+    "text": "Evaluation & Reliability evals/ LLM Eval Metrics Hallucination Mitigation Monitoring Feedback Loops MLflow Inference Optimization"
+  },
+  {
+    "source": "skills",
+    "text": "Client Delivery & Solutions field/ Client-Embedded Consulting Requirements → Production Rapid Prototyping End-to-End Ownership GDPR & Compliance Domains Demos & Technical Talks Cross-Functional Delivery"
+  },
+  {
+    "source": "skills",
+    "text": "ML / Deep Learning ml-dl/ PyTorch TensorFlow scikit-learn Computer Vision NLP Reinforcement Learning Explainable AI"
+  },
+  {
+    "source": "skills",
+    "text": "Backend & APIs backend/ Python FastAPI NestJS REST APIs Microservices Async Pipelines Celery Redis Java SQL"
+  },
+  {
+    "source": "skills",
+    "text": "Data & Retrieval Infra data/ Qdrant Vector Search Embeddings MongoDB MySQL Hive Hadoop Spark"
+  },
+  {
+    "source": "skills",
+    "text": "Cloud & MLOps infra/ Docker AWS S3 · Lambda · IAM Azure Distributed Task Execution UNIX / Shell"
+  },
+  {
+    "source": "skills",
+    "text": "Frontend & Prototyping ui/ Next.js React Streamlit Node.js Turborepo"
+  },
+  {
+    "source": "project",
+    "text": "AI Business Incorporation & Compliance Platform agentic · RAG Problem Founders drown in dense legal PDFs when checking incorporation eligibility and compliance requirements. Approach Headless multi-channel platform in a Turborepo monorepo — type-safe NestJS APIs plus a standalone Python RAG service with local embeddings and vector search over legal corpora. Outcome Self-serve compliance checks — founders query complex regulation in plain language. FastAPI · Qdrant · Next.js · NestJS · Prisma · Turborepo 🔒 proprietary client work — happy to walk through the architecture in an interview"
+  },
+  {
+    "source": "project",
+    "text": "PIP-Net Fusion — Ensembling & Model Federation MSc thesis Problem Ensembles boost accuracy but usually destroy interpretability — a dealbreaker in high-stakes ML. Approach Fused multiple interpretable PIP-Net models via ensembling and federation strategies , preserving prototype-based transparency. Outcome Higher accuracy without sacrificing explainability ; extended as a poster at PyTorch Conference Europe 2026. PyTorch · XAI · Federated Learning · Computer Vision code on GitHub → poster: PyTorch Conf EU 2026"
+  },
+  {
+    "source": "project",
+    "text": "Decoding Word Embeddings — Interpretability Toolkit NLP research Problem Embeddings are powerful but opaque — hard to see what their dimensions encode. Approach Extended SensePOLAR to support multiple oracles, models, and languages , with a Streamlit interface for rapid experiments. Outcome A reusable tool researchers use to compare interpretability across configurations. Hugging Face · Streamlit · Word Embeddings · Python code on GitHub →"
+  },
+  {
+    "source": "project",
+    "text": "Water Damage Detection Datathon 2023 Problem Identifying water damage in property images is slow, manual, and inconsistent. Approach U-Net segmentation with transfer-learning feature engineering for pixel-precise localization. Outcome Robust detection pipeline delivered under competition constraints. U-Net · Image Segmentation · Transfer Learning code on GitHub →"
+  },
+  {
+    "source": "experience",
+    "text": "NeuCorelytix Solutions LLP Data Science & AI Developer work Sep 2025 — present Remote · external consultant to Data Migration International Architected agentic AI systems : LLMs, RAG, tool orchestration, autonomous workflows. Designed scalable AI services — microservices, async pipelines, distributed execution, optimized inference. Implemented vector databases for retrieval-augmented workflows and semantic search. Built MCP frameworks for evaluation metrics, hallucination mitigation, monitoring, and feedback loops."
+  },
+  {
+    "source": "experience",
+    "text": "Data Migration International Data Science & AI Developer work Oct 2023 — Sep 2025 Kreuzlingen, Switzerland Shipped production LLM, RAG, and NLP solutions with end-to-end ML pipelines. Led AI integration: conversational agents, GDPR-compliant PII identification , data-quality systems."
+  },
+  {
+    "source": "experience",
+    "text": "University of Mannheim MSc, Data Science education Feb 2022 — Jun 2024 Mannheim, Germany · completed alongside full-time AI work Thesis: PIP-Net Fusion — interpretable model ensembling & federation; extended as a poster at PyTorch Conference Europe 2026. Coursework: Deep Learning, Computer Vision, Reinforcement Learning, Information Retrieval, Text Analytics, Network Science."
+  },
+  {
+    "source": "experience",
+    "text": "State Street Corporation Associate 2 — Data Engineer work Jul 2019 — Feb 2022 Hyderabad, India Owned six regulatory reports on Axiom Controller View across the full SDLC. Automated reporting with SQL/UNIX/shell — 40% less manual workload . Python over 20 TB Hadoop data — 50% faster processing ; AWS migration PoC — 30% lower infra cost ."
+  },
+  {
+    "source": "experience",
+    "text": "BVRIT Hyderabad College of Engineering for Women B.Tech, Information Technology education Aug 2015 — Jun 2019 Hyderabad, India Algorithms, Machine Learning, Big Data Analytics, Cloud Computing, Databases, Software Engineering."
+  },
+  {
+    "source": "experience",
+    "text": "Ceph Organization Outreachy Intern — Open Source open source May — Aug 2018 Remote Built the CephFS Shell : Unix-style commands over libcephfs Python bindings, plus documentation — still in the official Ceph docs →"
+  },
+  {
+    "source": "writing",
+    "text": "05 — writing Notes from the build. I've just started writing on Substack — essays on agentic systems, RAG in production, evals, and what actually survives contact with reality. Subscribe and the first ones will land in your inbox. ✍ just getting started The first essays are on the way. Subscribe to catch them the moment they drop — this list fills in automatically as I publish. Visit the Substack → S Subscribe New posts, straight to your inbox. No spam."
+  },
+  {
+    "source": "achievement",
+    "text": "Winner — JIVS Hackathon: All About Data & AI Data Migration International Geo-Masking privacy system preventing identification of people and locations in shared images."
+  },
+  {
+    "source": "achievement",
+    "text": "Published — CLEF 2022 Working Notes CLEF Conference \"Stacked Model based Argument Extraction and Stance Detection using Embedded LSTM\" — with conference talk. read the paper →"
+  },
+  {
+    "source": "achievement",
+    "text": "Poster — PyTorch Conference Europe 2026 PyTorch Foundation \"When Models Collaborate but Data Cannot: Explainable Ensemble Learning Under Privacy Constraints.\""
+  },
+  {
+    "source": "achievement",
+    "text": "3× Linux Foundation Scholarships OSS Summit EU 2022 · KubeCon EU 2020 & 2022 Recognized for sustained open-source and cloud-native community contributions."
+  },
+  {
+    "source": "achievement",
+    "text": "Speaker — DevConf.in & PyConf Hyderabad 2019 Ceph at DevConf.in Bengaluru; \"Open Source for Beginners\" at PyConf Hyderabad."
+  },
+  {
+    "source": "achievement",
+    "text": "Outreachy 2018 Participant Software Freedom Conservancy Selected for the competitive open-source internship; contributed core CLI tooling to Ceph. see it in Ceph docs →"
+  },
+  {
+    "source": "contact",
+    "text": "07 — contact Let's build something intelligent together. Whether it's agentic systems, RAG at scale, or an AI product that needs to ship — my inbox is open. Say hello Download resume (PDF) Connect on LinkedIn email rajulapavani@outlook.com in/ rajula-pavani gh/ rpavani1998 substack/ pavanirajula"
+  }
+]

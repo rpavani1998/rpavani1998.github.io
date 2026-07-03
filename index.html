@@ -358,6 +358,7 @@ footer a:hover{color:var(--accent)}
 .bmsg.bot{background:var(--bg-soft);border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start;color:var(--body)}
 .bmsg.bot b{color:var(--ink)}
 .bmsg.user{background:var(--accent-soft);border:1px solid rgba(180,85,46,.24);border-bottom-right-radius:5px;align-self:flex-end;color:var(--ink)}
+.bsrc{display:block;margin-top:8px;padding-top:7px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.02em}
 .btyping{display:inline-flex;gap:4px;padding:3px 1px}
 .btyping i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:tp 1.1s infinite}
 .btyping i:nth-child(2){animation-delay:.15s}.btyping i:nth-child(3){animation-delay:.3s}
@@ -413,7 +414,7 @@ footer a:hover{color:var(--accent)}
       </div>
       <div class="hero-photo">
         <div class="portrait-frame">
-          <img class="portrait" src="img/pavani.jpeg" alt="Portrait of Pavani Rajula"
+          <img class="portrait" src="img/pavani.png" alt="Portrait of Pavani Rajula"
                onerror="this.closest('.hero-photo').style.display='none'" />
         </div>
         <span class="photo-badge"><i></i> Hyderabad, IN · remote-friendly</span>
@@ -537,6 +538,17 @@ footer a:hover{color:var(--accent)}
     <p class="eyebrow">03 — selected work</p>
     <h2>Case studies in <em>applied intelligence.</em></h2>
     <p class="sec-sub">Problem → approach → outcome: how I build AI products end to end.</p>
+
+    <article class="proj rv">
+      <div class="proj-head"><h3>PAV·AI — the RAG chatbot on this page</h3><span class="ptag">live · RAG</span></div>
+      <div class="case">
+        <div class="r"><span class="k">Problem</span><span>Recruiters want quick answers about me without scrolling — and I wanted to <b>demonstrate</b> a grounded RAG, not just list it as a skill.</span></div>
+        <div class="r"><span class="k">Approach</span><span>A full RAG over my own portfolio: <b>ingest this site → embed → retrieve → grounded generation</b> on a free Cloudflare Worker, with prompt-injection guardrails and an eval harness.</span></div>
+        <div class="r"><span class="k">Outcome</span><span>The "Ask PAV·AI" button here — <b>retrieval you can see</b>, refuses when it doesn't know, and tested for faithfulness.</span></div>
+      </div>
+      <p class="pstack">Cloudflare Workers AI · bge-small · Llama-3.1-8b · cosine retrieval · evals</p>
+      <div class="plinks"><a href="rag.html">read the case study →</a><a href="#home" onclick="setTimeout(function(){document.getElementById('botFab').click()},400)">try it ↘</a></div>
+    </article>
 
     <article class="proj rv">
       <div class="proj-head"><h3>AI Business Incorporation &amp; Compliance Platform</h3><span class="ptag">agentic · RAG</span></div>
@@ -689,8 +701,6 @@ footer a:hover{color:var(--accent)}
 <section id="contact">
   <div class="wrap rv">
     <p class="eyebrow" style="text-align:center">07 — contact</p>
-    <img class="contact-photo" src="img/pavani.jpeg" alt="Pavani Rajula"
-         onerror="this.style.display='none'" />
     <h2>Let's build something <em>intelligent</em> together.</h2>
     <p class="sec-sub">Whether it's agentic systems, RAG at scale, or an AI product that needs to ship — my inbox is open.</p>
     <div class="cta-row" style="justify-content:center">
@@ -712,7 +722,7 @@ footer a:hover{color:var(--accent)}
 <div id="botPanel" role="dialog" aria-label="PAV·AI assistant">
   <div class="bot-head">
     <div class="bot-ava">P</div>
-    <div><div class="t">PAV·AI</div><div class="s">● grounded in her résumé · no made-up facts</div></div>
+    <div><div class="t">PAV·AI</div><div class="s">● grounded RAG · answers only from this site</div></div>
     <button class="bot-info" id="botInfo" aria-label="How PAV·AI works" title="How this works">&#9432;</button>
     <button class="bot-close" id="botClose" aria-label="Close assistant">✕</button>
   </div>
@@ -734,18 +744,18 @@ footer a:hover{color:var(--accent)}
   <div class="rag-modal-card" role="dialog" aria-modal="true" aria-label="How PAV·AI works">
     <button class="rag-modal-close" id="ragModalClose" aria-label="Close">✕</button>
     <p class="eyebrow">under the hood</p>
-    <h3>How PAV·AI works</h3>
-    <p class="rm-lead">A grounded LLM over Pavani's résumé. Her whole CV fits in the model's context window, so it's passed in full and the model is told to answer only from it — no vector DB, no retrieval, no room to hallucinate.</p>
+    <h3>PAV·AI is a real RAG</h3>
+    <p class="rm-lead">A full retrieval-augmented generation pipeline over this portfolio — the site you're on becomes the knowledge base.</p>
     <ol class="rm-steps">
-      <li><b>Ground</b> — the full résumé is sent as context with every question.</li>
-      <li><b>Answer</b> — Llama-3.1-8b replies using only that context, told to say "I don't know" rather than invent.</li>
-      <li><b>Protect</b> — it runs on a Cloudflare Worker, so no API keys touch the browser; inputs and outputs are capped and CORS is locked to this domain.</li>
+      <li><b>Retrieve</b> — your question is embedded and cosine-matched against ~28 chunks ingested from this site; the closest ones (above a relevance threshold) win.</li>
+      <li><b>Augment + generate</b> — those chunks ground Llama-3.1-8b, which answers only from them and refuses when nothing's relevant.</li>
+      <li><b>Guarded</b> — prompt-injection resistant, input/output capped, CORS-locked, no API keys in the browser — on a free Cloudflare Worker.</li>
     </ol>
-    <p class="rm-note"><b>Why no RAG here?</b> Chunking, embeddings, and vector search solve "corpus too big for context" — a résumé isn't that. I'd reach for retrieval if the knowledge base grew past the window (essays, docs), and Graph RAG only for large corpora with rich relationships. Right-sizing beats buzzwords.</p>
+    <p class="rm-note">Tested with an <b>eval harness</b> (retrieval, groundedness, refusal, injection). A deliberate reference build — a résumé fits in context, but I built the full pipeline to show it done right.</p>
     <div class="rm-tags">
-      <span class="tag hot">Cloudflare Workers AI</span><span class="tag">Llama-3.1-8b</span><span class="tag">grounded prompt</span><span class="tag">free tier</span>
+      <span class="tag hot">Cloudflare Workers AI</span><span class="tag">bge-small</span><span class="tag">Llama-3.1-8b</span><span class="tag">evals</span>
     </div>
-    <a class="rm-link" href="https://github.com/rpavani1998/rpavani1998.github.io/tree/master/rag" target="_blank" rel="noopener">read the code on GitHub →</a>
+    <a class="rm-link" href="rag.html">read the full case study →</a>
   </div>
 </div>
 
@@ -901,7 +911,14 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
         const r = await fetch(RAG_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({q})});
         const data = await r.json();
         const a = (data.answer || '').trim();
-        if(a){ t.innerHTML = esc(a).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>'); log.scrollTop = log.scrollHeight; return; }
+        if(a){
+          let html = esc(a).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+          if(Array.isArray(data.sources) && data.sources.length){
+            const labels = [...new Set(data.sources.map(s => s.source))].slice(0,4).join(' · ');
+            html += '<span class="bsrc">▸ grounded in: ' + esc(labels) + '</span>';
+          }
+          t.innerHTML = html; log.scrollTop = log.scrollHeight; return;
+        }
       }catch(err){ /* network/Worker down — fall back to scripted below */ }
     }
     setTimeout(() => { t.innerHTML = scriptedAnswer(q); log.scrollTop = log.scrollHeight; }, rm ? 40 : 650 + Math.random()*350);
@@ -918,7 +935,7 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
     if(open && !greeted){
       greeted = true;
       add(RAG_ENDPOINT
-        ? "Hi! 👋 I'm <b>PAV·AI</b> — a grounded LLM over Pavani's résumé. I answer only from her CV, so no made-up facts. Ask away, or tap the ⓘ above to see how I'm built."
+        ? "Hi! 👋 I'm <b>PAV·AI</b> — a real RAG over this portfolio: I retrieve the relevant bits of the site and answer only from them (and refuse when I don't know). Ask away, or tap the ⓘ for how I'm built."
         : "Hi! 👋 I'm <b>PAV·AI</b> — ask about Pavani's projects, skills, or experience, or tap a suggestion. (Tap the ⓘ above for how I'm built.)", 'bot');
     }
     if(open) input.focus();

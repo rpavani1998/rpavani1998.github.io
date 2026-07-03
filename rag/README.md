@@ -1,74 +1,77 @@
-# PAV·AI — grounded résumé assistant
+# PAV·AI — a grounded RAG chatbot
 
-A tiny Cloudflare Worker that answers questions about Pavani from her résumé,
-running entirely on Cloudflare's free Workers AI tier. No API keys in the browser.
+A full retrieval-augmented generation pipeline over Pavani's portfolio, running
+on Cloudflare's free Workers AI tier. No API keys in the browser. The narrated
+version lives at [`/rag.html`](../rag.html); this is the operational README.
 
-## How it works (and why it's built this way)
+> **Honest framing:** the corpus is a résumé — it fits in a context window, so at
+> this scale you don't *need* retrieval. This RAG is a deliberate **reference
+> implementation**: the point is the full pipeline, guardrails, and evals done
+> right. Knowing when retrieval is overkill is part of the skill.
 
-The entire résumé (~3k tokens, in `knowledge.js`) fits comfortably in the model's
-context window, so it's passed in **full** on every question:
+## Pipeline
 
-1. The full résumé + the visitor's question go to `llama-3.1-8b-instruct`.
-2. A grounding system prompt forces the model to answer **only** from the résumé,
-   or say it doesn't know — that's the "no hallucination" guarantee.
+```
+index.html ──ingest──▶ knowledge.json ──embed──▶ [vectors] ──retrieve──▶ top-k ──ground──▶ Llama-3.1-8b ──▶ answer + sources
+ (source of truth)      (28 chunks)      bge-small     cosine + threshold        prompt
+```
 
-No chunking, no embeddings, no vector search, no vector database. Those exist to
-solve *"corpus too big for the context window"* — a problem this doesn't have.
-Adding them here would be over-engineering, not sophistication.
+- **Ingest** (`scripts/ingest.mjs`, zero-dep): parses `index.html`, cleans it,
+  and writes `knowledge.json` — one chunk per project / role / skill group. The
+  website is the single source of truth; re-run after editing the site.
+- **Retrieve** (`src/index.js`): embeds the question, cosine-ranks chunks, keeps
+  the top-K above a relevance threshold (`MIN_SCORE`) — below it, the bot refuses.
+- **Generate**: the retrieved chunks ground `llama-3.1-8b-instruct`, which answers
+  only from them. Returns the answer **plus its sources** (which chunks + scores).
 
-### When would retrieval (RAG) actually be warranted?
+## Guardrails
 
-If the knowledge base outgrew the context window — say, all of Pavani's Substack
-essays, long project write-ups, or transcripts — then you'd chunk the corpus,
-embed it, and vector-search the relevant passages per query (classic RAG). Graph
-RAG goes further, building an entity/relationship graph, and only pays off on
-large corpora with rich cross-document relationships. Right tool for the size.
+- Grounding + refusal (relevance threshold makes "I don't know" first-class)
+- Prompt-injection resistance (user input fenced as data, not instructions)
+- Input cap (300 chars) and output cap (300 tokens)
+- Optional per-IP rate limit (bind a KV namespace `RATE_KV`)
+- CORS locked to the portfolio origin; no secrets in the browser
+
+## Evaluation
+
+Labelled cases in `evals/cases.json`, runner in `evals/run.mjs`. Scores four axes
+across factual / refusal / adversarial questions: **retrieval hit@k, answer
+recall, refusal accuracy, injection resistance.**
+
+```bash
+RAG_ENDPOINT="https://pavai-rag.<you>.workers.dev" npm run eval
+```
+
+Runs against the live Worker (real model, not a mock); writes `evals/results.json`.
 
 ## Deploy (about 5 minutes, $0)
-
-You need a free Cloudflare account. Workers AI is on the free tier.
 
 ```bash
 cd rag
 npm install
-npx wrangler login        # opens a browser, one-time OAuth
-npm run deploy            # deploys the Worker, prints its URL
+npm run ingest            # index.html -> knowledge.json (commit the result)
+npx wrangler login        # one-time OAuth
+npm run deploy            # prints your Worker URL
 ```
 
-The deploy prints a URL like `https://pavai-rag.<your-subdomain>.workers.dev`.
+Paste the printed `*.workers.dev` URL into `RAG_ENDPOINT` in `../index.html`, then
+commit + push. Leave it empty and the site falls back to a scripted responder, so
+nothing breaks before you deploy.
 
-## Turn it on
+## Scaling path
 
-Open `../index.html`, find this line in the chatbot script near the bottom:
+- Corpus outgrows the context window (essays, docs) → this pipeline with a real
+  vector store (Cloudflare Vectorize, Qdrant, pgvector) instead of the in-memory index.
+- Rich cross-document relationships / multi-hop questions → consider Graph RAG.
+  Overkill for a résumé; right tool for the size.
 
-```js
-const RAG_ENDPOINT = ""; // paste your deployed Worker URL here
-```
+## Files
 
-Paste your Worker URL between the quotes, save, commit, push. Done — the chatbot
-is now a real RAG. Leave it empty and the site falls back to the scripted
-keyword responder, so nothing breaks before you deploy.
-
-## Cost & abuse control
-
-- Input capped at 300 chars, output at 300 tokens.
-- CORS locked to your Pages domain (edit `ALLOWED_ORIGINS` in `src/index.js`).
-- Optional per-IP hourly rate limit — create a KV namespace and uncomment the
-  `RATE_KV` binding in `wrangler.toml`:
-  ```bash
-  npx wrangler kv namespace create RATE_KV
-  ```
-  Paste the returned id into `wrangler.toml`, then `npm run deploy` again.
-
-## Local test
-
-```bash
-npm run dev   # serves the Worker at http://localhost:8787
-curl -s http://localhost:8787 -X POST -H 'Content-Type: application/json' \
-  -d '{"q":"what does pavani do?"}'
-```
-
-## Update the knowledge base
-
-Edit `knowledge.js` (the `FACTS` array) and redeploy. Keep it factual and
-concise — it's passed to the model verbatim as grounding context.
+| File | Role |
+|------|------|
+| `scripts/ingest.mjs` | Build the knowledge base from `index.html` |
+| `knowledge.json` | Generated chunks (the corpus) |
+| `src/index.js` | The RAG Worker (retrieve → ground → generate) |
+| `evals/cases.json` | Labelled test set |
+| `evals/run.mjs` | Eval runner |
+| `wrangler.toml` | Worker config (Workers AI binding, optional KV) |
