@@ -1,0 +1,15 @@
+name = "pavai-rag"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Workers AI — powers both the embeddings (retrieval) and the LLM (generation).
+# No API key needed in code; `wrangler deploy` wires the binding for you.
+[ai]
+binding = "AI"
+
+# OPTIONAL — per-IP rate limiting. Create a KV namespace and uncomment to enable:
+#   npx wrangler kv namespace create RATE_KV
+# then paste the returned id below.
+# [[kv_namespaces]]
+# binding = "RATE_KV"
+# id = "PASTE_KV_ID_HERE"

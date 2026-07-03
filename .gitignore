@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Node / wrangler (RAG backend)
+node_modules/
+rag/node_modules/
+rag/.wrangler/
+.dev.vars
+
+# Editor / misc
+*.log
+.sass-cache/
