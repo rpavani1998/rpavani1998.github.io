@@ -1,0 +1,42 @@
+name: Sync Substack posts
+
+# Pulls the Substack RSS into data/posts.json so the portfolio's Writing
+# section auto-fills as Pavani publishes. Runs daily, on demand, and on push.
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch: {}
+  push:
+    branches: [master]
+    paths:
+      - "scripts/fetch-substack.mjs"
+      - ".github/workflows/substack.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: substack-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch feed
+        run: node scripts/fetch-substack.mjs
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet -- data/posts.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/posts.json
+            git commit -m "chore: sync Substack posts"
+            git push
+          else
+            echo "No change in data/posts.json"
+          fi

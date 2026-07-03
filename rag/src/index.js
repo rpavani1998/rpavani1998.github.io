@@ -1,15 +1,17 @@
-// PAV·AI — a real RAG over Pavani Rajula's resume, running on Cloudflare Workers AI.
+// PAV·AI — a grounded résumé assistant on Cloudflare Workers AI.
 //
-// Pipeline per question:
-//   1. Retrieval   — embed the question (bge-small), cosine-search the resume chunks.
-//   2. Augmented   — stuff the top matches into the prompt as grounding context.
-//   3. Generation  — Llama-3.1-8b answers, instructed to use ONLY that context.
+// Right-sized for the job: the entire résumé (~3k tokens, see knowledge.js)
+// fits in the model's context window, so it's passed in FULL on every question.
+// No chunking, embeddings, or vector search — those solve "corpus too big for
+// context," which isn't the problem here. What keeps it honest is the grounding
+// prompt: the model answers ONLY from the résumé, or says it doesn't know.
 //
-// Everything runs on Cloudflare's free Workers AI tier. No API keys in the browser.
-import { CHUNKS } from "../chunks.js";
+// (If the knowledge base ever outgrew the context window — essays, docs — that's
+// when retrieval/RAG earns its keep. Not before.)
+import { FACTS } from "../knowledge.js";
 
-const EMBED_MODEL = "@cf/baai/bge-small-en-v1.5";
-const CHAT_MODEL  = "@cf/meta/llama-3.1-8b-instruct";
+const CHAT_MODEL = "@cf/meta/llama-3.1-8b-instruct";
+const RESUME = FACTS.join("\n");
 
 // Lock this to your site so randoms can't point their own page at your Worker.
 const ALLOWED_ORIGINS = [
@@ -18,16 +20,10 @@ const ALLOWED_ORIGINS = [
   "http://127.0.0.1:8000",
 ];
 
-const MAX_Q_CHARS   = 300;   // cap input — keeps cost + abuse bounded
+const MAX_Q_CHARS    = 300;  // cap input — keeps cost + abuse bounded
 const MAX_OUT_TOKENS = 300;  // cap output
-const TOP_K         = 4;     // how many chunks to retrieve
-const RATE_LIMIT    = 20;    // requests per IP per window (needs the optional RATE_KV binding)
-const RATE_WINDOW_S = 3600;  // 1 hour
-
-// Chunk embeddings are computed once per isolate and cached in memory.
-// The corpus is tiny (~30 passages), so this is a few embed calls on a cold
-// start, then free for every request after. No build step, no vector DB.
-let VECTORS = null;
+const RATE_LIMIT     = 20;   // requests per IP per window (needs the optional RATE_KV binding)
+const RATE_WINDOW_S  = 3600; // 1 hour
 
 function cors(origin) {
   const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
@@ -44,24 +40,6 @@ function json(body, status, origin) {
     status,
     headers: { "Content-Type": "application/json", ...cors(origin) },
   });
-}
-
-function cosine(a, b) {
-  let dot = 0, na = 0, nb = 0;
-  for (let i = 0; i < a.length; i++) { dot += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
-  return dot / (Math.sqrt(na) * Math.sqrt(nb) || 1);
-}
-
-async function embed(env, texts) {
-  const res = await env.AI.run(EMBED_MODEL, { text: texts });
-  return res.data; // array of vectors, one per input
-}
-
-async function ensureVectors(env) {
-  if (VECTORS) return VECTORS;
-  const vecs = await embed(env, CHUNKS);
-  VECTORS = CHUNKS.map((text, i) => ({ text, vec: vecs[i] }));
-  return VECTORS;
 }
 
 // Optional per-IP rate limit. No-op unless you bind a KV namespace named RATE_KV.
@@ -93,27 +71,16 @@ export default {
     }
 
     try {
-      // 1. Retrieval
-      const store = await ensureVectors(env);
-      const [qvec] = await embed(env, [q]);
-      const ranked = store
-        .map((c) => ({ text: c.text, score: cosine(qvec, c.vec) }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, TOP_K);
-      const context = ranked.map((r, i) => `[${i + 1}] ${r.text}`).join("\n\n");
-
-      // 2 + 3. Augmented generation, grounded in the retrieved context only.
       const system =
         "You are PAV·AI, the assistant on Pavani Rajula's portfolio. Answer questions about " +
-        "Pavani using ONLY the CONTEXT provided. If the answer isn't in the context, say you " +
-        "don't have that detail and suggest emailing rajulapavani@outlook.com. Be concise (2-4 " +
-        "sentences), warm, and specific. Refer to her as 'Pavani' or 'she'. Never invent facts, " +
-        "numbers, employers, or dates.";
+        "Pavani using ONLY the RÉSUMÉ below. If the answer isn't in it, say you don't have that " +
+        "detail and suggest emailing rajulapavani@outlook.com. Be concise (2-4 sentences), warm, " +
+        "and specific. Refer to her as 'Pavani' or 'she'. Never invent facts, numbers, employers, or dates.";
       const gen = await env.AI.run(CHAT_MODEL, {
         max_tokens: MAX_OUT_TOKENS,
         messages: [
           { role: "system", content: system },
-          { role: "user", content: `CONTEXT:\n${context}\n\nQUESTION: ${q}` },
+          { role: "user", content: `RÉSUMÉ:\n${RESUME}\n\nQUESTION: ${q}` },
         ],
       });
 

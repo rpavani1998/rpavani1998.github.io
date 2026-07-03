@@ -1,7 +1,8 @@
-// Knowledge base for the PAV·AI RAG — Pavani Rajula's resume, chunked.
-// Each chunk is one retrievable passage. Keep them short and self-contained:
-// retrieval quality depends on each chunk making sense on its own.
-export const CHUNKS = [
+// Pavani Rajula's résumé — the full knowledge base for PAV·AI.
+// The whole thing fits comfortably in the model's context window, so it's
+// passed in full on every question. No chunking or retrieval needed at this
+// scale (see rag/README.md for when retrieval would actually earn its keep).
+export const FACTS = [
   "Pavani Rajula is an AI Developer and Data Scientist. She architects agentic AI systems — LLMs, RAG pipelines, tool orchestration, and MCP frameworks — embedded with client teams from architecture through deployment. Her tagline: from prompt to production.",
   "Pavani holds an MSc in Data Science from the University of Mannheim, Germany (2022–2024), completed alongside full-time AI work. Her thesis, PIP-Net Fusion, covered interpretable model ensembling and federation.",
   "Pavani earned a B.Tech in Information Technology from BVRIT Hyderabad College of Engineering for Women (2015–2019), covering algorithms, machine learning, big data analytics, cloud computing, databases, and software engineering.",

@@ -1,19 +1,28 @@
-# PAV·AI — real RAG backend
+# PAV·AI — grounded résumé assistant
 
-A tiny Cloudflare Worker that turns the portfolio chatbot into an actual
-Retrieval-Augmented Generation system, running entirely on Cloudflare's free
-Workers AI tier. No API keys live in the browser.
+A tiny Cloudflare Worker that answers questions about Pavani from her résumé,
+running entirely on Cloudflare's free Workers AI tier. No API keys in the browser.
 
-## How it works
+## How it works (and why it's built this way)
 
-1. **Retrieval** — the question is embedded (`bge-small`) and cosine-searched
-   against Pavani's resume, split into ~30 chunks in `chunks.js`.
-2. **Augmented** — the top matches are injected into the prompt as context.
-3. **Generation** — `llama-3.1-8b-instruct` answers, instructed to use *only*
-   that context (this is the "no hallucination" grounding).
+The entire résumé (~3k tokens, in `knowledge.js`) fits comfortably in the model's
+context window, so it's passed in **full** on every question:
 
-Chunk embeddings are computed once per isolate and cached in memory — no build
-step, no vector database.
+1. The full résumé + the visitor's question go to `llama-3.1-8b-instruct`.
+2. A grounding system prompt forces the model to answer **only** from the résumé,
+   or say it doesn't know — that's the "no hallucination" guarantee.
+
+No chunking, no embeddings, no vector search, no vector database. Those exist to
+solve *"corpus too big for the context window"* — a problem this doesn't have.
+Adding them here would be over-engineering, not sophistication.
+
+### When would retrieval (RAG) actually be warranted?
+
+If the knowledge base outgrew the context window — say, all of Pavani's Substack
+essays, long project write-ups, or transcripts — then you'd chunk the corpus,
+embed it, and vector-search the relevant passages per query (classic RAG). Graph
+RAG goes further, building an entity/relationship graph, and only pays off on
+large corpora with rich cross-document relationships. Right tool for the size.
 
 ## Deploy (about 5 minutes, $0)
 
@@ -61,5 +70,5 @@ curl -s http://localhost:8787 -X POST -H 'Content-Type: application/json' \
 
 ## Update the knowledge base
 
-Edit `chunks.js` and redeploy. Keep each chunk short and self-contained —
-retrieval quality depends on each passage making sense on its own.
+Edit `knowledge.js` (the `FACTS` array) and redeploy. Keep it factual and
+concise — it's passed to the model verbatim as grounding context.

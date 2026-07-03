@@ -219,20 +219,26 @@ h2 em{font-style:italic;color:var(--accent);font-weight:400}
 .plinks .priv{font-family:var(--mono);font-size:12px;color:var(--muted)}
 @media(max-width:620px){.case .r{grid-template-columns:1fr;gap:2px}}
 
-/* ---------- how PAV·AI works ---------- */
-#how-pavai .rag-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
-.rag-step{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:22px;box-shadow:0 5px 18px rgba(var(--shadow),.05)}
-.rag-step .rs-n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:var(--mono);font-size:14px;margin-bottom:12px}
-.rag-step h3{font-size:18px;font-weight:500;margin-bottom:6px}
-.rag-step p{font-size:14.5px;color:var(--body)}
-.rag-step b{color:var(--ink);font-weight:600}
-.rag-meta{border:1px solid var(--line);border-radius:16px;background:var(--bg-soft);padding:22px 24px}
-.rag-facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.rag-note{font-size:14.5px;color:var(--body);margin-bottom:16px}
-.rag-note b{color:var(--ink);font-weight:600}
-.rag-try{font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--card);border:1px solid rgba(180,85,46,.4);border-radius:100px;padding:7px 14px;transition:.15s}
-.rag-try:hover{background:var(--accent-soft)}
-@media(max-width:760px){#how-pavai .rag-steps{grid-template-columns:1fr}}
+/* ---------- "how PAV·AI works" popup ---------- */
+.rag-modal{position:fixed;inset:0;z-index:120;display:none;place-items:center;padding:20px;background:rgba(20,15,10,.5);backdrop-filter:blur(3px)}
+.rag-modal.open{display:grid;animation:bpop .26s cubic-bezier(.2,.9,.35,1.15)}
+.rag-modal-card{position:relative;max-width:440px;width:100%;max-height:86vh;overflow-y:auto;background:var(--card);border:1px solid var(--line-dark);border-radius:20px;padding:30px 28px;box-shadow:0 30px 72px rgba(0,0,0,.34)}
+.rag-modal-close{position:absolute;top:15px;right:16px;background:none;border:0;font-size:18px;color:var(--muted)}
+.rag-modal-close:hover{color:var(--ink)}
+.rag-modal-card .eyebrow{margin-bottom:8px}
+.rag-modal-card h3{font-size:24px;font-weight:500;margin-bottom:10px}
+.rm-lead{font-size:15px;color:var(--body);margin-bottom:18px}
+.rm-steps{list-style:none;display:grid;gap:11px;margin-bottom:18px;counter-reset:s}
+.rm-steps li{position:relative;padding-left:32px;font-size:14.5px;color:var(--body)}
+.rm-steps li b{color:var(--ink);font-weight:600}
+.rm-steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-family:var(--mono);font-size:11px;display:grid;place-items:center}
+.rm-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.rm-note{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.rm-note b{color:var(--body);font-weight:600}
+.rm-link{font-family:var(--mono);font-size:12.5px;color:var(--accent);border-bottom:1px dashed rgba(180,85,46,.4)}
+.rm-link:hover{border-bottom-style:solid}
+.bot-info{margin-left:auto;background:none;border:0;font-size:15px;color:var(--muted);line-height:1;padding:4px}
+.bot-info:hover{color:var(--accent)}
 
 /* ---------- experience ---------- */
 .xp{position:relative;padding-left:26px;border-left:1px solid var(--line-dark);margin-left:6px}
@@ -260,18 +266,26 @@ h2 em{font-style:italic;color:var(--accent);font-weight:400}
 .xp-item li b{color:var(--ink);font-weight:600}
 
 /* ---------- writing / substack ---------- */
-.write-card{
-  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-  border:1px solid var(--line);border-radius:20px;background:var(--card);padding:28px 30px;
-  box-shadow:0 8px 26px rgba(var(--shadow),.06);
-}
 .write-mark{
   width:56px;height:56px;border-radius:15px;flex:none;display:grid;place-items:center;
   background:var(--accent-soft);color:var(--accent);font-family:var(--serif);font-size:26px;font-weight:600;
 }
-.write-card .wc-body{flex:1;min-width:220px}
-.write-card h3{font-size:20px;font-weight:500;margin-bottom:4px}
-.write-card p{font-size:15px;color:var(--body)}
+.writing-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:clamp(20px,4vw,32px);align-items:start}
+.posts{display:grid;gap:14px}
+.post-item{display:block;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:20px 22px;box-shadow:0 5px 18px rgba(var(--shadow),.05);transition:border-color .2s,transform .2s,box-shadow .2s}
+.post-item:hover{border-color:var(--line-dark);transform:translateY(-2px);box-shadow:0 12px 30px rgba(var(--shadow),.09)}
+.post-item h3{font-size:19px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.post-item .pdate{font-family:var(--mono);font-size:11.5px;color:var(--gold);display:block;margin-bottom:8px}
+.post-item p{font-size:14.5px;color:var(--body)}
+.posts-empty{border:1px dashed var(--line-dark);border-radius:16px;background:var(--bg-soft);padding:28px 24px}
+.pe-badge{display:inline-block;font-size:11.5px;color:var(--accent);background:var(--accent-soft);border-radius:100px;padding:5px 12px;margin-bottom:14px}
+.posts-empty p{font-size:15px;color:var(--body);margin-bottom:18px}
+.subscribe-card{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:24px;box-shadow:0 8px 26px rgba(var(--shadow),.06)}
+.subscribe-card .write-mark{margin-bottom:14px}
+.subscribe-card h3{font-size:18px;font-weight:500;margin-bottom:4px}
+.subscribe-card p{font-size:14px;color:var(--body);margin-bottom:16px}
+.substack-embed{width:100%;height:150px;border:1px solid var(--line);border-radius:12px;background:#fff}
+@media(max-width:760px){.writing-grid{grid-template-columns:1fr}}
 
 /* ---------- achievements ---------- */
 .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -337,7 +351,7 @@ footer a:hover{color:var(--accent)}
 .bot-ava{width:36px;height:36px;border-radius:11px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:16px;font-weight:600}
 .bot-head .t{font-family:var(--serif);font-weight:600;color:var(--ink);font-size:15px}
 .bot-head .s{font-family:var(--mono);font-size:10.5px;color:var(--accent)}
-.bot-close{margin-left:auto;background:none;border:0;font-size:18px;color:var(--muted)}
+.bot-close{margin-left:2px;background:none;border:0;font-size:18px;color:var(--muted)}
 .bot-close:hover{color:var(--ink)}
 .bot-log{padding:15px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;flex:1}
 .bmsg{max-width:88%;padding:11px 14px;border-radius:15px;font-size:13.5px;line-height:1.55;white-space:pre-line}
@@ -570,30 +584,6 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
-<!-- ============ HOW PAV·AI WORKS ============ -->
-<section id="how-pavai">
-  <div class="wrap rv">
-    <p class="eyebrow">— under the hood</p>
-    <h2>The chatbot on this page is a <em>real RAG.</em></h2>
-    <p class="sec-sub">The "Ask PAV·AI" button isn't a canned FAQ — it's a working retrieval-augmented generation pipeline over my own resume, the same architecture I ship for clients. If you're curious, here's exactly how it works.</p>
-    <div class="rag-steps">
-      <div class="rag-step rv"><span class="rs-n mono">1</span><h3>Retrieve</h3><p>Your question is embedded with a <b>bge-small</b> model and cosine-searched against my CV, split into ~30 passages. The closest chunks win.</p></div>
-      <div class="rag-step rv"><span class="rs-n mono">2</span><h3>Augment</h3><p>Those passages are injected into the prompt as grounding context, so the model only reasons over what's actually true about me.</p></div>
-      <div class="rag-step rv"><span class="rs-n mono">3</span><h3>Generate</h3><p><b>Llama-3.1-8b</b> answers from that context only — instructed to say "I don't know" rather than invent. That's the hallucination guardrail.</p></div>
-    </div>
-    <div class="rag-meta rv">
-      <div class="rag-facts">
-        <span class="tag hot">Cloudflare Workers AI</span><span class="tag">bge-small embeddings</span><span class="tag">Llama-3.1-8b</span><span class="tag">vector search</span><span class="tag">grounded prompt</span><span class="tag">free tier</span>
-      </div>
-      <p class="rag-note">Design choices that matter: <b>no API keys in the browser</b> (a Cloudflare Worker hides them), inputs and outputs are capped and CORS is locked to this domain to control cost and abuse, and the grounding prompt is what keeps it honest. The whole pipeline runs on a free tier.</p>
-      <div class="plinks">
-        <a href="https://github.com/rpavani1998/rpavani1998.github.io/tree/master/rag" target="_blank" rel="noopener">read the full code on GitHub →</a>
-        <button class="rag-try" onclick="document.getElementById('botFab').click()">try it — ask PAV·AI ↘</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience">
   <div class="wrap rv">
@@ -659,14 +649,22 @@ footer a:hover{color:var(--accent)}
   <div class="wrap rv">
     <p class="eyebrow">05 — writing</p>
     <h2>Notes from <em>the build.</em></h2>
-    <p class="sec-sub">I write about agentic systems, RAG in production, and what actually survives contact with reality.</p>
-    <div class="write-card">
-      <div class="write-mark">S</div>
-      <div class="wc-body">
-        <h3>Pavani on Substack</h3>
-        <p>Essays on shipping LLM systems that hold up — evals, hallucination mitigation, and lessons from client-embedded AI work.</p>
+    <p class="sec-sub">I've just started writing on Substack — essays on agentic systems, RAG in production, evals, and what actually survives contact with reality. Subscribe and the first ones will land in your inbox.</p>
+    <div class="writing-grid">
+      <div class="posts" id="substackPosts">
+        <!-- Auto-filled from data/posts.json (synced daily via GitHub Action). Empty state until the first post publishes. -->
+        <div class="posts-empty">
+          <span class="pe-badge mono">✍ just getting started</span>
+          <p>The first essays are on the way. Subscribe to catch them the moment they drop — this list fills in automatically as I publish.</p>
+          <a class="btn btn-ghost" href="https://pavanirajula.substack.com/" target="_blank" rel="noopener">Visit the Substack →</a>
+        </div>
       </div>
-      <a class="btn btn-primary" href="https://pavanirajula.substack.com/" target="_blank" rel="noopener">Read on Substack →</a>
+      <aside class="subscribe-card">
+        <div class="write-mark">S</div>
+        <h3>Subscribe</h3>
+        <p>New posts, straight to your inbox. No spam.</p>
+        <iframe class="substack-embed" src="https://pavanirajula.substack.com/embed" title="Subscribe to Pavani's Substack" loading="lazy"></iframe>
+      </aside>
     </div>
   </div>
 </section>
@@ -714,7 +712,8 @@ footer a:hover{color:var(--accent)}
 <div id="botPanel" role="dialog" aria-label="PAV·AI assistant">
   <div class="bot-head">
     <div class="bot-ava">P</div>
-    <div><div class="t">PAV·AI</div><div class="s">● portfolio assistant · retrieval-only, no hallucinations</div></div>
+    <div><div class="t">PAV·AI</div><div class="s">● grounded in her résumé · no made-up facts</div></div>
+    <button class="bot-info" id="botInfo" aria-label="How PAV·AI works" title="How this works">&#9432;</button>
     <button class="bot-close" id="botClose" aria-label="Close assistant">✕</button>
   </div>
   <div class="bot-log" id="botLog" aria-live="polite"></div>
@@ -727,6 +726,26 @@ footer a:hover{color:var(--accent)}
   <div class="bot-in">
     <input id="botInput" type="text" placeholder="Ask about skills, projects, experience…" aria-label="Ask the assistant" />
     <button class="bot-send" id="botSend" aria-label="Send">↑</button>
+  </div>
+</div>
+
+<!-- How PAV·AI works — opened from the ⓘ in the chat header -->
+<div id="ragModal" class="rag-modal" aria-hidden="true">
+  <div class="rag-modal-card" role="dialog" aria-modal="true" aria-label="How PAV·AI works">
+    <button class="rag-modal-close" id="ragModalClose" aria-label="Close">✕</button>
+    <p class="eyebrow">under the hood</p>
+    <h3>How PAV·AI works</h3>
+    <p class="rm-lead">A grounded LLM over Pavani's résumé. Her whole CV fits in the model's context window, so it's passed in full and the model is told to answer only from it — no vector DB, no retrieval, no room to hallucinate.</p>
+    <ol class="rm-steps">
+      <li><b>Ground</b> — the full résumé is sent as context with every question.</li>
+      <li><b>Answer</b> — Llama-3.1-8b replies using only that context, told to say "I don't know" rather than invent.</li>
+      <li><b>Protect</b> — it runs on a Cloudflare Worker, so no API keys touch the browser; inputs and outputs are capped and CORS is locked to this domain.</li>
+    </ol>
+    <p class="rm-note"><b>Why no RAG here?</b> Chunking, embeddings, and vector search solve "corpus too big for context" — a résumé isn't that. I'd reach for retrieval if the knowledge base grew past the window (essays, docs), and Graph RAG only for large corpora with rich relationships. Right-sizing beats buzzwords.</p>
+    <div class="rm-tags">
+      <span class="tag hot">Cloudflare Workers AI</span><span class="tag">Llama-3.1-8b</span><span class="tag">grounded prompt</span><span class="tag">free tier</span>
+    </div>
+    <a class="rm-link" href="https://github.com/rpavani1998/rpavani1998.github.io/tree/master/rag" target="_blank" rel="noopener">read the code on GitHub →</a>
   </div>
 </div>
 
@@ -808,12 +827,35 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
   }));
 })();
 
+/* Substack posts — auto-filled from data/posts.json (synced daily by a GitHub Action) */
+(function(){
+  const box = document.getElementById('substackPosts');
+  if(!box) return;
+  const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  fetch('data/posts.json', {cache:'no-cache'})
+    .then(r => r.ok ? r.json() : [])
+    .then(posts => {
+      if(!Array.isArray(posts) || !posts.length) return; // keep the "just getting started" state
+      box.innerHTML = posts.slice(0,4).map(p => {
+        const d = p.date ? new Date(p.date).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'}) : '';
+        return '<a class="post-item" href="'+encodeURI(p.url||'#')+'" target="_blank" rel="noopener">'
+          + (d ? '<span class="pdate">'+esc(d)+'</span>' : '')
+          + '<h3>'+esc(p.title)+'</h3>'
+          + (p.excerpt ? '<p>'+esc(p.excerpt)+'</p>' : '')
+          + '</a>';
+      }).join('');
+    })
+    .catch(()=>{}); // network/file missing — leave the empty state in place
+})();
+
 /* PAV·AI chatbot — scripted retrieval over the resume */
 (function(){
   const fab = document.getElementById('botFab'), panel = document.getElementById('botPanel'),
         log = document.getElementById('botLog'), input = document.getElementById('botInput'),
         send = document.getElementById('botSend'), close = document.getElementById('botClose'),
-        chips = document.getElementById('botChips');
+        chips = document.getElementById('botChips'),
+        info = document.getElementById('botInfo'), modal = document.getElementById('ragModal'),
+        modalClose = document.getElementById('ragModalClose');
   // Paste your deployed Cloudflare Worker URL here to switch PAV·AI from the
   // scripted fallback to a real RAG (see rag/README.md). Empty = scripted.
   const RAG_ENDPOINT = "";
@@ -876,17 +918,21 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
     if(open && !greeted){
       greeted = true;
       add(RAG_ENDPOINT
-        ? "Hi! 👋 I'm <b>PAV·AI</b> — a real RAG over Pavani's resume: your question is embedded, her CV is retrieved by vector search, and a grounded LLM answers from just those passages. Ask away."
-        : "Hi! 👋 I'm <b>PAV·AI</b> — a retriever over Pavani's resume. Ask about her projects, skills, or experience, or tap a suggestion.", 'bot');
+        ? "Hi! 👋 I'm <b>PAV·AI</b> — a grounded LLM over Pavani's résumé. I answer only from her CV, so no made-up facts. Ask away, or tap the ⓘ above to see how I'm built."
+        : "Hi! 👋 I'm <b>PAV·AI</b> — ask about Pavani's projects, skills, or experience, or tap a suggestion. (Tap the ⓘ above for how I'm built.)", 'bot');
     }
     if(open) input.focus();
   }
+  function setModal(open){ modal.classList.toggle('open', open); modal.setAttribute('aria-hidden', String(!open)); }
   fab.addEventListener('click', () => toggle(!panel.classList.contains('open')));
   close.addEventListener('click', () => toggle(false));
   send.addEventListener('click', () => submit(input.value));
   input.addEventListener('keydown', e => { if(e.key === 'Enter') submit(input.value); });
   chips.addEventListener('click', e => { if(e.target.classList.contains('bot-chip')) submit(e.target.textContent); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') toggle(false); });
+  info.addEventListener('click', () => setModal(true));
+  modalClose.addEventListener('click', () => setModal(false));
+  modal.addEventListener('click', e => { if(e.target === modal) setModal(false); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape'){ setModal(false); toggle(false); } });
 })();
 </script>
 </body>
