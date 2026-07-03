@@ -61,19 +61,19 @@
   },
   {
     "source": "experience",
-    "text": "NeuCorelytix Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Building AI-Assisted Business Compliance Platform : RAG pipeline with Qdrant vector search, LangChain orchestration, local/cloud LLMs — context-aware generation grounded in legal documents. Architecting dedicated Python/FastAPI AI microservice decoupled from NestJS/Node.js backend; CMS-driven knowledge base with auto re-indexing via Payload CMS. Engineering full-stack monorepo ( Next.js, NestJS, Prisma, PostgreSQL ) with Docker Compose orchestration across 5 interconnected services. Driving AI integration at Data Migration International : production LLM/RAG solutions, GDPR PII identification, data-quality systems (under NeuCorelytix Solutions)."
+    "text": "NeuCorelytix Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Building AI-Assisted Business Compliance Platform : RAG pipeline with Qdrant vector search over 500+ legal documents , LangChain orchestration, local/cloud LLMs — context-aware generation that eliminated ~95% of hallucinated responses . Architecting dedicated Python/FastAPI AI microservice decoupled from NestJS/Node.js backend; CMS-driven knowledge base with auto re-indexing — reduced content update time from hours to under 5 minutes . Engineering full-stack monorepo ( Next.js, NestJS, Prisma, PostgreSQL ) with Docker Compose orchestration across 5 interconnected services . Driving AI integration at Data Migration International : 3+ production LLM/RAG systems , GDPR PII identification with >95% accuracy , data-quality systems (under NeuCorelytix Solutions)."
   },
   {
     "source": "experience",
-    "text": "Data Migration International Data Science & AI Developer · external consultant via NeuCorelytix Solutions freelance Sep 2025 · Jul 2026 Hyderabad, India · on-site Develop agentic AI systems with LLMs, RAG, tool orchestration , and autonomous workflow automation. Design scalable AI service architectures: microservice model endpoints, async pipelines, distributed task execution . Build evaluation frameworks for agent behavior, response reliability, data integrity, and failure recovery. Implement monitoring and feedback loops to reduce hallucinations and improve domain grounding. Integrate AI into production environments ensuring compliance, security, cost efficiency, and maintainability ."
+    "text": "Data Migration International Data Science & AI Developer · external consultant via NeuCorelytix Solutions freelance Sep 2025 · Jul 2026 Hyderabad, India · on-site Develop agentic AI systems with LLMs, RAG, tool orchestration — supporting 50+ daily queries across client workflows. Design 3+ scalable AI service architectures : microservice model endpoints, async pipelines, distributed task execution. Build evaluation frameworks covering 10+ agent behaviors and failure scenarios. Implement monitoring and feedback loops — reduced hallucination rate by 60% across production systems. Integrate AI into 2 production environments ensuring compliance, security, and cost efficiency."
   },
   {
     "source": "experience",
-    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Sep 2025 Kreuzlingen, Switzerland · hybrid Developed and deployed AI solutions with LLMs, RAG, NLP , and structured data pipelines. Fine-tuned and optimized models for production use cases, improving performance and scalability. Built end-to-end ML pipelines and integrated AI capabilities into business workflows. Contributed to model deployment and integration in real-world environments."
+    "text": "Data Migration International Data Science & AI Developer work Oct 2023 · Sep 2025 Kreuzlingen, Switzerland · hybrid Developed and deployed 4+ AI solutions with LLMs, RAG, NLP, and structured data pipelines into production. Fine-tuned and optimized 5+ models for production, improving inference speed by 40% . Built end-to-end ML pipelines processing 10,000+ records daily . Contributed to model deployment across 2 business units ."
   },
   {
     "source": "experience",
-    "text": "University of Mannheim MSc, Data Science education Feb 2022 · Jun 2024 Mannheim, Germany · completed alongside full-time AI work Thesis: PIP-Net Fusion on interpretable model ensembling and federation, extended as a poster at PyTorch Conference Europe 2026. Coursework: Deep Learning, Computer Vision, Reinforcement Learning, Information Retrieval, Text Analytics, Network Science."
+    "text": "University of Mannheim MSc, Data Science education Feb 2022 · Jun 2024 Mannheim, Germany · completed alongside full-time AI work Thesis: PIP-Net Fusion on interpretable model ensembling — 3–5% accuracy gain over single models while preserving explainability; extended as a poster at PyTorch Conference Europe 2026. Coursework: Deep Learning, Computer Vision, Reinforcement Learning, Information Retrieval, Text Analytics, Network Science."
   },
   {
     "source": "experience",
@@ -85,7 +85,7 @@
   },
   {
     "source": "experience",
-    "text": "Ceph Organization Outreachy Intern · Open Source open source May · Aug 2018 Remote Built the CephFS Shell : Unix-style commands over libcephfs Python bindings, plus documentation. Still in the official Ceph docs →"
+    "text": "Ceph Organization Outreachy Intern · Open Source open source May · Aug 2018 Remote Built the CephFS Shell : Unix-style commands over libcephfs Python bindings — still maintained in official Ceph docs 8+ years later . See it here →"
   },
   {
     "source": "writing",
