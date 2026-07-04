@@ -301,48 +301,6 @@ h2 em{font-style:italic;color:var(--accent);font-weight:400}
 .xp-item li::before{content:'–';position:absolute;left:0;color:var(--line-dark)}
 .xp-item li b{color:var(--ink);font-weight:600}
 
-/* ---------- services ---------- */
-.service-card{
-  border:1px solid var(--line);border-radius:20px;background:var(--card);padding:28px 26px;box-shadow:0 6px 24px rgba(var(--shadow),.06);
-  transition:border-color .25s,transform .25s,box-shadow .25s; position:relative; overflow:hidden;
-}
-.service-card::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--accent),var(--gold)); opacity:.7;
-}
-.service-card:hover {
-  border-color:var(--line-dark); transform:translateY(-4px); box-shadow:0 16px 36px rgba(var(--shadow),.12);
-}
-.service-icon {
-  width:52px;height:52px;border-radius:14px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;
-  font-size:24px;margin-bottom:20px;font-family:var(--sans);font-weight:600;
-}
-.service-card h3 {
-  font-size:21px;font-weight:600;margin-bottom:12px;color:var(--ink);line-height:1.3;
-}
-.service-card p {
-  font-size:15.5px;color:var(--body);margin-bottom:16px;line-height:1.65;
-}
-.service-card ul {
-  list-style:none;margin-top:12px;padding-left:0;
-}
-.service-card li {
-  font-size:14.5px;margin-bottom:9px;padding-left:24px;position:relative;color:var(--body);
-}
-.service-card li::before {
-  content:'✓'; position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;
-  background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;
-  font-size:12px;font-weight:600;
-}
-.services-grid {
-  display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:28px;margin-top:32px;
-}
-.service-cta {
-  margin-top:36px;padding:24px 28px;background:var(--bg-soft);border:1px dashed var(--line-dark);border-radius:16px;text-align:center;
-}
-.service-cta p {
-  font-size:16px;color:var(--body);margin:0;
-}
-
 /* ---------- writing / substack ---------- */
 .write-mark{
   width:56px;height:56px;border-radius:15px;flex:none;display:grid;place-items:center;
@@ -464,7 +422,6 @@ footer a:hover{color:var(--accent)}
     <a class="logo" href="#home">pavani<span>.</span>rajula</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Work</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -604,60 +561,6 @@ footer a:hover{color:var(--accent)}
           <span class="tag">Node.js</span><span class="tag">Turborepo</span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVICES ============ -->
-<section id="services">
-  <div class="wrap rv">
-    <p class="eyebrow">02.5 · services</p>
-    <h2>Production AI engineering, packaged by use case.</h2>
-    <p class="sec-sub">Move from prompt to production with purpose-built AI systems for your specific domain and requirements.</p>
-    
-    <div class="services-grid">
-      <article class="service-card">
-        <div class="service-icon">🤖</div>
-        <h3>Agentic AI Systems</h3>
-        <p>Build autonomous AI agents that can reason, plan, and execute tasks independently. Specialize in multi-model coordination and MCP protocol integration with cost-optimized mastermodel/submodel architectures.</p>
-        <ul>
-          <li>Model Context Protocol (MCP) implementation</li>
-          <li>Mastermind/submodel architecture design</li>
-          <li>Multi-agent workflow orchestration</li>
-          <li>Cost-aware model routing</li>
-          <li>Client-embedded AI solutions</li>
-        </ul>
-      </article>
-      
-      <article class="service-card">
-        <div class="service-icon">🔍</div>
-        <h3>RAG Pipeline Engineering</h3>
-        <p>Production-grade Retrieval-Augmented Generation with comprehensive evaluation harnesses and hallucination mitigation. Ground your AI responses in verified facts and reduce deception.</p>
-        <ul>
-          <li>GroundTruth validation and quality assurance</li>
-          <li>Performance monitoring and optimization</li>
-          <li>Cost-aware model selection and routing</li>
-          <li>API development for RAG services</li>
-          <li>Automated testing and CI/CD integration</li>
-        </ul>
-      </article>
-      
-      <article class="service-card">
-        <div class="service-icon">🏗️</div>
-        <h3>Full-Stack AI Development</h3>
-        <p>End-to-end AI product development from initial prototype to production deployment. Build scalable AI services that integrate seamlessly with your existing tech stack.</p>
-        <ul>
-          <li>Frontend & backend integration (Next.js, React, FastAPI, NestJS)</li>
-          <li>Backend microservices architecture</li>
-          <li>Client-embedded consulting and delivery</li>
-          <li>Compliance and security implementation</li>
-          <li>Technical talks and product demonstrations</li>
-        </ul>
-      </article>
-    </div>
-    
-    <div class="service-cta">
-      <p>Works best for: AI startups, enterprise client projects, internal AI teams seeking production deployment expertise.</p>
     </div>
   </div>
 </section>
