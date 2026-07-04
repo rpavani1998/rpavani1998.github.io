@@ -3,8 +3,35 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Building PAV·AI — a grounded RAG chatbot · Pavani Rajula</title>
-<meta name="description" content="How I built PAV·AI: a full retrieval-augmented generation chatbot over my portfolio — ingestion, retrieval, grounded generation, guardrails, and an eval harness. A reference implementation." />
+<title>Building PAV·AI — Production RAG Chatbot with Guardrails & Evals | Pavani Rajula</title>
+<meta name="description" content="Full technical case study: Building a grounded Retrieval-Augmented Generation chatbot with ingestion pipeline, cosine retrieval, prompt-injection guardrails, and evaluation harness on Cloudflare Workers AI." />
+<meta name="keywords" content="RAG chatbot, Retrieval Augmented Generation, RAG implementation, LLM guardrails, AI evaluation, Cloudflare Workers AI, hallucination mitigation, AI engineering case study" />
+<meta property="og:title" content="Building PAV·AI — Production RAG Chatbot with Guardrails & Evals" />
+<meta property="og:description" content="Technical case study: building a full RAG pipeline with ingestion, retrieval, grounded generation, guardrails, and eval harness." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rpavani1998.github.io/rag.html" />
+<meta property="og:image" content="https://rpavani1998.github.io/img/pavani.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Building PAV·AI — Production RAG Chatbot with Guardrails & Evals" />
+<meta name="twitter:description" content="Full technical case study on building a grounded RAG chatbot with Cloudflare Workers AI." />
+<base href="https://rpavani1998.github.io/" />
+<link rel="canonical" href="https://rpavani1998.github.io/rag.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Building PAV·AI: A Grounded RAG Chatbot",
+  "description": "Full technical case study of building a Retrieval-Augmented Generation chatbot with ingestion, retrieval, grounded generation, guardrails, and eval harness on Cloudflare Workers AI.",
+  "author": {
+    "@type": "Person",
+    "name": "Pavani Rajula",
+    "url": "https://rpavani1998.github.io"
+  },
+  "datePublished": "2024-01-01",
+  "dateModified": "2026-07-04",
+  "image": "https://rpavani1998.github.io/img/pavani.png"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@0,400;0,500;0,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
