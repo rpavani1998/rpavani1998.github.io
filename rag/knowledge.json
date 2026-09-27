@@ -1,11 +1,11 @@
 [
   {
     "source": "intro",
-    "text": "Open to AI engineering roles Pavani Rajula. From prompt to production. building Anyone can demo an LLM. I build the part that survives contact with reality: agentic systems, RAG pipelines, and MCP frameworks with evals and hallucination mitigation built in , embedded with client teams from architecture to deployment. MSc Data Science, University of Mannheim. View my work Download resume (PDF) Hyderabad, IN · remote-friendly 0 Years in data & AI 0 Data engineered 0 JIVS AI hackathon 0 Conference talks -->"
+    "text": "Open to AI engineering roles Pavani Rajula. AI Engineer & Data Scientist. specializing in agentic AI systems, RAG pipelines, LLM applications, production ML. I design and deploy production AI systems — focusing on agentic workflows, RAG architectures, and evaluation frameworks that ensure reliability, compliance, and hallucination mitigation in client environments. MSc Data Science, University of Mannheim. View my work Download resume (PDF) Hyderabad, IN · remote-friendly"
   },
   {
     "source": "about",
-    "text": "01 · about Research-grade AI, systems that ship. I turn frontier AI research into reliable, testable systems: agents that reason, pipelines that retrieve, and models people can trust . I work through my own company . Right now I'm building AI solutions for clients at NeuCorelytix Solutions — most recently as an external consultant to Data Migration International . Before that, two years shipping production LLM/RAG systems and GDPR-compliant personal-data identification at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street . My roots are in open source. I started as an Outreachy intern at Ceph building the CephFS Shell, and I've been speaking at PyConf, DevConf, and the PyTorch Conference since. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages EN C1 · DE A1 · Telugu · Hindi status open to opportunities ✓"
+    "text": "01 · about Applied AI engineering, built to ship. I specialize in building reliable, verifiable AI applications: production RAG services, agentic workflows, and domain-grounded architectures with robust evaluation harnesses and compliance guardrails. Through my company, NeuCorelytix Solutions, I work directly with engineering teams to design and ship AI solutions — most recently as an external consultant to Data Migration International. Previously, I spent two years developing production LLM/RAG systems and GDPR-compliant data workflows at Data Migration International in Switzerland, and three years engineering regulatory data pipelines over 20 TB of Hadoop data at State Street. My background is rooted in open source. As an Outreachy intern at Ceph, I built the CephFS Shell (still maintained in official docs), and have presented technical work at PyConf, DevConf, and PyTorch Conference Europe. Off the keyboard: singing, yoga, badminton, and art. at a glance role AI Developer / Data Scientist focus Agentic AI · RAG · LLMOps education MSc Data Science, Mannheim base Hyderabad, IN (remote-friendly) languages English · Telugu · Hindi status open to opportunities ✓"
   },
   {
     "source": "skills",
@@ -93,7 +93,7 @@
   },
   {
     "source": "writing",
-    "text": "05 · writing Notes from the build. I've just started writing on Substack. Essays on agentic systems, RAG in production, evals, and what actually survives contact with reality. Subscribe and the first ones land in your inbox. ✍ just getting started The first essays are on the way. Subscribe to catch them the moment they drop. This list fills in automatically as I publish. Visit the Substack → S Subscribe New posts, straight to your inbox. No spam."
+    "text": "05 · writing Technical notes & articles. Notes on agentic architectures, production RAG, evaluation frameworks, and real-world system design lessons. ✍ just getting started The first essays are on the way. Subscribe to catch them the moment they drop. This list fills in automatically as I publish. Visit the Substack → S Subscribe New posts, straight to your inbox. No spam."
   },
   {
     "source": "achievement",
