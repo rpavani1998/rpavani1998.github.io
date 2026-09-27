@@ -64,10 +64,6 @@
     "text": "Decoding Word Embeddings · Interpretability Toolkit NLP research Problem Embeddings are powerful but opaque. Hard to see what their dimensions encode. Approach Extended SensePOLAR to support multiple oracles, models, and languages , with a Streamlit interface for rapid experiments. Outcome A reusable tool researchers use to compare interpretability across configurations. Hugging Face · Streamlit · Word Embeddings · Python code on GitHub →"
   },
   {
-    "source": "project",
-    "text": "Water Damage Detection Datathon 2023 Problem Identifying water damage in property images is slow, manual, and inconsistent. Approach U-Net segmentation with transfer-learning feature engineering for pixel-precise localization. Outcome Robust detection pipeline delivered under competition constraints. U-Net · Image Segmentation · Transfer Learning code on GitHub →"
-  },
-  {
     "source": "experience",
     "text": "NeuCorelytix Solutions Founder · AI Developer work Sep 2025 · present Remote · my own company. External consultant to Data Migration International until Jul 2026 Building full-stack AI applications : RAG pipelines, conversational agents, and LLM-integrated web platforms with frontend (Next.js/React) and backend (NestJS/FastAPI) services. Architecting AI microservices : Python/FastAPI endpoints for retrieval-augmented generation, decoupled from transactional backends; CMS-driven knowledge bases with automated vector re-indexing. Engineering scalable monorepo architectures with Docker Compose orchestration across multiple interconnected services. Driving AI integration at client environments: GDPR-compliant PII identification, data-quality systems, and production ML pipelines (under NeuCorelytix Solutions)."
   },
