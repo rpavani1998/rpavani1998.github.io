@@ -38,7 +38,11 @@
       "Multi-Model Coordination",
       "Agentic Systems",
       "Production AI",
-      "Prompt Engineering"
+      "Prompt Engineering",
+      "Multimodal AI",
+      "Knowledge Graphs",
+      "Browser Agents & Extensions",
+      "Long-Term Memory Systems"
     ],
     "url": "https://rpavani1998.github.io",
     "sameAs": [
@@ -584,14 +588,36 @@ footer a:hover{color:var(--accent)}
     </article>
 
     <article class="proj rv">
-      <div class="proj-head"><h3>AI-Assisted Business Compliance Platform</h3><span class="ptag">agentic · RAG · full-stack</span></div>
+      <div class="proj-head"><h3>VakilSarathi · Legal Intelligence Engine for India</h3><span class="ptag">legal AI · bi-temporal RAG · open-source</span></div>
       <div class="case">
-        <div class="r"><span class="k">Overview</span><span>An end-to-end platform that helps founders navigate regional government compliance and business incorporation. An <b>AI Concierge</b> replaces complex legal bureaucracy with guided conversation, grounded in curated legal documents.</span></div>
-        <div class="r"><span class="k">RAG Pipeline</span><span>Dedicated <b>Python/FastAPI microservice</b> (decoupled from Node.js backend) with Qdrant vector search, LangChain orchestration, and local/cloud LLMs — context-aware generation that eliminated hallucinations by grounding responses in retrieved legal documents.</span></div>
-        <div class="r"><span class="k">Stack</span><span><b>Next.js</b> (frontend + admin dashboard) · <b>NestJS</b> API · <b>Prisma</b> + PostgreSQL · <b>Payload CMS</b> (knowledge base management) · <b>Turborepo</b> monorepo · <b>Docker Compose</b> orchestration</span></div>
-        <div class="r"><span class="k">Key Feature</span><span>CMS-driven knowledge base: non-technical admins edit service guides, upload compliance PDFs, and trigger auto re-indexing of the vector database — no developer needed.</span></div>
+        <div class="r"><span class="k">Overview</span><span>A foundational, open-source legal intelligence engine modeling Indian statutory law (GST initially, expanding across Income Tax, Companies Act, FEMA) as structured, canonical, versioned knowledge objects for verifiable AI research and drafting.</span></div>
+        <div class="r"><span class="k">Architecture</span><span><b>Three-Plane Design</b>: <i>Knowledge Plane</i> (Docling/OCR ingestion, PostgreSQL system of record with bi-temporal range types, Neo4j knowledge graph, and Qdrant + OpenSearch hybrid retrieval), <i>Matter Plane</i> (tenant-scoped with Presidio/GLiNER PII firewall &amp; vault), and <i>Model Plane</i> (stateless open-weight reasoning models like Qwen &amp; DeepSeek via vLLM).</span></div>
+        <div class="r"><span class="k">Key Innovation</span><span><b>Bi-temporal correctness</b> (point-in-time statutory versioning) and <b>Legal Object URIs (LOUs)</b> ensuring hallucination-proof legal citations, automated SCN replies, and 100% self-hostable air-gapped deployment.</span></div>
       </div>
-      <p class="pstack">FastAPI · Qdrant · LangChain · Next.js · NestJS · Prisma · PostgreSQL · Payload CMS · Turborepo · Docker</p>
+      <p class="pstack">Python 3.12 · FastAPI · PostgreSQL 16 · Neo4j · Qdrant · OpenSearch · BGE-M3 · Docling · Presidio · vLLM · Temporal · MinIO · Docker</p>
+      <div class="plinks"><a href="https://github.com/rpavani1998" target="_blank" rel="noopener">code on GitHub →</a></div>
+    </article>
+
+    <article class="proj rv">
+      <div class="proj-head"><h3>Re:Me · AI Browser Agent &amp; Personal Memory</h3><span class="ptag">agentic · browser agent · RAG</span></div>
+      <div class="case">
+        <div class="r"><span class="k">Overview</span><span>An AI-powered browser extension that remembers useful things encountered online, understands their context, and surfaces them proactively when they become relevant.</span></div>
+        <div class="r"><span class="k">Architecture</span><span>Combines an autonomous <b>browser agent</b> with a personal memory layer: <b>agentic workflows</b> with multimodal content understanding, <b>semantic retrieval</b> over vector embeddings, and <b>knowledge graph entity relationships</b> for context-aware recommendations and web automation.</span></div>
+        <div class="r"><span class="k">Highlight</span><span>A browser agent that understands what you're currently looking for and transforms passive web bookmarks into <b>actionable reminders, connected knowledge, and timely resurfacing</b>.</span></div>
+      </div>
+      <p class="pstack">Browser Extension · LLMs / GenAI · Agentic Workflows · RAG · Vector DB · Knowledge Graphs · Web Automation · Multimodal AI</p>
+      <div class="plinks"><a href="https://github.com/rpavani1998" target="_blank" rel="noopener">code &amp; demo on GitHub →</a></div>
+    </article>
+
+    <article class="proj rv">
+      <div class="proj-head"><h3>Memoiary · Multimodal AI Journal &amp; Persistent Memory</h3><span class="ptag">multimodal AI · long-term memory · full-stack</span></div>
+      <div class="case">
+        <div class="r"><span class="k">Overview</span><span>A multimodal AI journal designed as a <b>persistent personal memory system</b>. Captures text, voice, images, and daily moments to let users revisit life experiences with rich semantic context.</span></div>
+        <div class="r"><span class="k">Architecture</span><span>End-to-end multimodal ingestion pipeline featuring <b>speech-to-text</b>, automated <b>entity extraction &amp; resolution</b> (people, places, events, emotions, concepts), and <b>knowledge graph relationship modeling</b> across time with contextual retrieval over vector embeddings.</span></div>
+        <div class="r"><span class="k">Highlight</span><span>A persistent multimodal memory layer that <b>connects what you write, say, see, and experience over time</b>, backed by a responsive Next.js and Firebase architecture.</span></div>
+      </div>
+      <p class="pstack">Next.js · Firebase / Firestore · LLMs / GenAI · Multimodal AI · Speech-to-Text · RAG · Knowledge Graphs · Vector Search</p>
+      <div class="plinks"><a href="https://github.com/rpavani1998" target="_blank" rel="noopener">code &amp; demo on GitHub →</a></div>
     </article>
 
     <article class="proj rv">
@@ -919,7 +945,10 @@ document.querySelectorAll('.rv').forEach(x => io.observe(x));
   const KB = [
     {k:['do','who','about','role','summary','pavani','she','quality'], a:"Pavani is an <b>AI Developer</b> running her own company <b>NeuCorelytix Solutions</b>, building AI solutions for clients. She was most recently an external consultant to Data Migration International. MSc Data Science, University of Mannheim."},
     {k:['hire','why','fit','consultant','strength','good','great','stand'], a:"What makes Pavani stand out:\n1. <b>Embedded delivery.</b> She works inside a client's environment today, turning their requirements into systems that ship.\n2. <b>Full AI delivery stack.</b> RAG services, evals, hallucination mitigation, APIs, deployment.\n3. <b>Client-facing chops.</b> Conference talks, demos, hackathon wins.\n4. Domain depth in <b>GDPR and compliance</b>, regulated environments where reliability matters most."},
-    {k:['project','case','work','built','portfolio'], a:"Top projects:\n◉ <b>AI Compliance Platform.</b> RAG over legal PDFs for self-serve incorporation checks.\n◉ <b>PIP-Net Fusion</b> (MSc thesis). Interpretable ensembling and federation, extended at PyTorch Conf EU 2026.\n◉ <b>SensePOLAR toolkit.</b> Embedding interpretability across models and languages.\n◉ <b>Water Damage Detection.</b> U-Net segmentation.\n\nFull case studies are in the Work section."},
+    {k:['project','case','work','built','portfolio'], a:"Top projects:\n◉ <b>VakilSarathi.</b> Foundational open-source legal intelligence engine for India (bi-temporal RAG, Neo4j, Qdrant, OpenSearch, Docling, Presidio).\n◉ <b>Re:Me.</b> AI browser agent & personal memory extension for proactive resurfacing.\n◉ <b>Memoiary.</b> Multimodal AI journal & persistent personal memory system.\n◉ <b>PIP-Net Fusion</b> (MSc thesis). Interpretable ensembling and federation, extended at PyTorch Conf EU 2026.\n◉ <b>SensePOLAR toolkit.</b> Embedding interpretability across models and languages.\n◉ <b>Water Damage Detection.</b> U-Net segmentation.\n\nFull case studies are in the Work section."},
+    {k:['vakilsarathi','legal','law','gst','scn','tax'], a:"<b>VakilSarathi</b> is the foundational open-source legal intelligence engine for India. It models law as structured, bi-temporal canonical objects using a 3-plane architecture (PostgreSQL, Neo4j, Qdrant, OpenSearch, Docling, Presidio, vLLM/Qwen/DeepSeek) for verifiable research, drafting (SCN replies), and compliance."},
+    {k:['reme','re:me','browser agent','extension'], a:"<b>Re:Me</b> is an AI-powered browser extension that remembers useful things you encounter online, understands their context, and brings them back when relevant. It combines an autonomous browser agent with vector retrieval, knowledge graph relationships, and multimodal understanding."},
+    {k:['memoiary','journal','diary','memory system'], a:"<b>Memoiary</b> is a multimodal AI journal designed as a persistent personal memory system. It captures text, voice, and images, extracts people/places/emotions/events, and models relationships over time with knowledge graphs, Next.js, and Firebase."},
     {k:['skill','stack','tech','tool','know'], a:"Her stack:\n◉ <b>LLM/Agents</b>: Agentic AI, RAG, MCP, LangChain, LlamaIndex\n◉ <b>Evals</b>: metrics, hallucination mitigation, monitoring\n◉ <b>ML/DL</b>: PyTorch, TensorFlow, XAI\n◉ <b>Infra</b>: FastAPI, Docker, AWS, Qdrant, Spark"},
     {k:['cloud','aws','azure','lambda','s3','docker'], a:"Yes! Pavani has cloud experience with <b>AWS</b> (Lambda, S3, IAM) and <b>Azure</b> (Distributed Task Execution). She led an AWS migration PoC at State Street that cut infra costs by 30%, and built this very RAG chatbot on Cloudflare Workers. She's also a 3x Linux Foundation scholar for cloud-native contributions (KubeCon, OSS Summit)."},
     {k:['experience','job','career','history','state','ceph','migration','neucorelytix','quality'], a:"Timeline:\n2025→ currently running <b>NeuCorelytix Solutions</b>, building AI solutions for clients.\n2023–25 <b>Data Migration Intl</b> — direct hire Oct 2023–Sep 2025, then external consultant via NeuCorelytix Solutions Sep 2025–Jul 2026.\n2019–22 <b>State Street</b> engineering regulatory data over 20 TB of Hadoop.\n2018 <b>Ceph</b> as an Outreachy open-source intern."},

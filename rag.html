@@ -189,7 +189,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 44px;font-family:var(--mo
   <pre class="code"><span class="c">// split each list by its item's START marker — robust to nested &lt;div&gt;s</span>
 for (const proj of items(block("projects"), '&lt;article class="proj'))  add("project", proj);
 for (const item of items(block("experience"), '&lt;div class="xp-item')) add("experience", item);
-<span class="c">// → 28 chunks written to knowledge.json, e.g.:</span>
+<span class="c">// → 32 chunks written to knowledge.json, e.g.:</span>
 { "source": "experience",
   "text": "State Street Corporation … Python over 20 TB of Hadoop data — 50% faster …" }</pre>
   <p>Splitting on each item's <i>opening</i> marker (not trying to match closing tags) means nested markup inside an entry never breaks the chunk boundaries. In production this is where you'd handle PDFs, HTML, and docs with a real loader — the principle is the same: <b>clean, self-contained chunks in, good retrieval out.</b></p>
@@ -197,7 +197,7 @@ for (const item of items(block("experience"), '&lt;div class="xp-item')) add("ex
 
 <section class="doc"><div class="wrap">
   <h2><span class="snum">03</span> &nbsp;Retrieval</h2>
-  <p>On a cold start the Worker embeds all 28 chunks once (<code class="inline">bge-small-en-v1.5</code>) and caches the vectors in memory. Per question it embeds the query, ranks chunks by cosine similarity, and keeps the top-4 — but only if the best match clears a <b>relevance threshold</b>. That threshold is a guardrail: if nothing is similar enough, the bot refuses instead of forcing a weak answer.</p>
+  <p>On a cold start the Worker embeds all 32 chunks once (<code class="inline">bge-small-en-v1.5</code>) and caches the vectors in memory. Per question it embeds the query, ranks chunks by cosine similarity, and keeps the top-4 — but only if the best match clears a <b>relevance threshold</b>. That threshold is a guardrail: if nothing is similar enough, the bot refuses instead of forcing a weak answer.</p>
   <pre class="code">const ranked = index
   .map(c =&gt; ({ ...c, score: cosine(qvec, c.vec) }))
   .sort((a, b) =&gt; b.score - a.score);
